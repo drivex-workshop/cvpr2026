@@ -249,26 +249,7 @@ body {
   opacity: 1;
 }
 
-@media (max-width: 768px) {
-  .keynote-inner {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
 
-  .keynote-logo-wrap {
-    flex: 0 0 auto;
-    width: auto;
-    margin-top: 0.6rem;
-    justify-content: center;
-  }
-
-  
-  .keynote-logo {
-    width: 130px !important;
-    max-width: 130px !important;
-  }
-}
 .keynote-logo-wrap img[src*="wisc.edu"] {
   width: 150px !important;         
   height: 90px !important;          
