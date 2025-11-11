@@ -164,21 +164,6 @@ body {
   padding: 0.45rem;
 }
 
-
-.keynote-logo {
-  max-height: 78px;     /* ← 原来是 60px，现在更大 */
-  max-width: 150px;     /* ← 原来是 120px */
-  object-fit: contain;
-  opacity: 0.95;
-  filter: drop-shadow(0 3px 6px rgba(0,0,0,0.35));
-  transition: transform 0.3s ease, opacity 0.3s ease;
-}
-
-.keynote-logo:hover {
-  transform: scale(1.1);
-  opacity: 1;
-}
-
   .keynote-card {
     background: linear-gradient(145deg, rgba(17,24,39,0.98), rgba(24,35,55,0.98));
     border-radius: 18px;
@@ -232,15 +217,27 @@ body {
     color: rgba(209,213,219,0.9);
     margin: 0;
   }
-  .keynote-logo-wrap {
-    flex: 0 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-  }
+
+
+
+.keynote-inner {
+  display: flex;
+  align-items: center;
+  gap: 1.8rem;
+}
+
+.keynote-logo-wrap {
+  flex: 0 0 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .keynote-logo {
-  max-height: 78px;   
-  max-width: 150px;     
+  display: block;
+  width: 150px !important;
+  height: auto !important;
+  max-width: 150px !important;
   object-fit: contain;
   opacity: 0.95;
   filter: drop-shadow(0 3px 6px rgba(0,0,0,0.35));
@@ -251,15 +248,33 @@ body {
   transform: scale(1.1);
   opacity: 1;
 }
-  @media (max-width: 768px) {
-    .keynote-inner {
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-    }
-    .keynote-logo {
-      margin-top: 0.8rem;
-    }
+
+@media (max-width: 768px) {
+  .keynote-inner {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
   }
 
+  .keynote-logo-wrap {
+    flex: 0 0 auto;
+    width: auto;
+    margin-top: 0.6rem;
+    justify-content: center;
+  }
+
+  
+  .keynote-logo {
+    width: 130px !important;
+    max-width: 130px !important;
+  }
+}
+.keynote-logo-wrap img[src*="wisc.edu"] {
+  width: 150px !important;         
+  height: 90px !important;          
+  object-fit: cover;                
+  object-position: center;          
+  clip-path: inset(10% 8% 10% 8%);  
+  border-radius: 2px;               
+}
 
