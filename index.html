@@ -666,6 +666,7 @@
       <li>Vision-language models for traffic scene understanding and explanation</li>
       <li>LLM- and agent-based support for perception, prediction, planning, and V2X coordination</li>
       <li>Cooperative perception, V2X communication, and infrastructure-assisted driving</li>
+      <li>3D/4D Gaussian Splatting for 3D Scene Reconstruction</li>
       <li>Datasets, benchmarks, and evaluation protocols for foundation models and cooperative perception</li>
       <li>3D occupancy, 3D detection, 3D semantic segmentation, and holistic 3D scene understanding</li>
       <li>End-to-end pipelines and large driving models for multi-agent decision-making</li>
@@ -697,7 +698,7 @@
         </tr>
         <tr>
           <td>08:30 – 08:50</td>
-          <td>Keynotes 1 - Prof. Dr. Daniel Cremers (TUM) <span class="schedule-label keynote"><i class="fa fa-microphone"></i>Keynote</span></td>
+          <td>Keynotes 1 - Prof. Dr. Jiaqi Ma (UCLA) <span class="schedule-label keynote"><i class="fa fa-microphone"></i>Keynote</span></td>
         </tr>
           <tr>
           <td>08:50 – 09:10</td>
@@ -709,7 +710,7 @@
         </tr>
           <tr>
           <td>09:40 – 10:00</td>
-          <td>Keynotes 4 - Prof. Dr. Marco Pavone (Stanford & NVIDIA) <span class="schedule-label keynote"><i class="fa fa-microphone"></i>Keynote</span></td>
+          <td>Keynotes 4 - Prof. Dr. Marco Pavone (Stanford Uni. & NVIDIA) <span class="schedule-label keynote"><i class="fa fa-microphone"></i>Keynote</span></td>
         </tr>
         <tr>
           <td>10:00 – 11:00</td>
@@ -729,11 +730,11 @@
         </tr>
         <tr>
           <td>13:00 – 13:20</td>
-          <td>Keynotes 6 - Prof. Dr. Bolei Zhou (UCLA) <span class="schedule-label keynote"><i class="fa fa-microphone"></i>Keynote</span></td>
+          <td>Keynotes 6 - Prof. Dr. Bolei Zhou (UCLA & Coco Robotics) <span class="schedule-label keynote"><i class="fa fa-microphone"></i>Keynote</span></td>
         </tr>
           <tr>
           <td>13:20 – 13:40</td>
-          <td>Keynotes 7 - Prof. Dr. Manmohan Chandraker (UCSD) <span class="schedule-label keynote"><i class="fa fa-microphone"></i>Keynote</span></td>
+          <td>Keynotes 7 - Prof. Dr. Manmohan Chandraker (UCSD & NECLabs) <span class="schedule-label keynote"><i class="fa fa-microphone"></i>Keynote</span></td>
         </tr>
         <tr>
           <td>13:40 – 14:00</td>
@@ -753,14 +754,10 @@
         </tr>
         <tr>
           <td>16:00 – 16:20</td>
-          <td>Keynotes 10 - Prof. Dr. Alina Roitberg (Uni Stuttgart) <span class="schedule-label keynote"><i class="fa fa-microphone"></i>Keynote</span></td>
-        </tr>
-          <tr>
-          <td>16:20 – 16:40</td>
-          <td>Keynotes 11 - Prof. Dr. Jiaqi Ma (UCLA) <span class="schedule-label keynote"><i class="fa fa-microphone"></i>Keynote</span></td>
+          <td>Keynotes 10 - Prof. Dr. Daniel Cremers (TUM) <span class="schedule-label keynote"><i class="fa fa-microphone"></i>Keynote</span></td>
         </tr>
         <tr>
-          <td>16:40 – 17:20</td>
+          <td>16:20 – 17:20</td>
           <td>Panel II <span class="schedule-label panel"><i class="fa fa-comments"></i>Panel</span></td>
         </tr>
         <tr>
@@ -993,28 +990,6 @@
       </a>
     </div>
 
-    <!-- Alina Roitberg -->
-    <div class="card keynote-card">
-      <a class="keynote-link" href="https://aroitberg.github.io/" target="_blank">
-        <div class="keynote-inner">
-          <div class="keynote-avatar-wrap">
-            <img class="keynote-avatar"
-                 src="https://www.f05.uni-stuttgart.de/informatik/img/personen/alinaroitberg_wbg.png?__scale=w:220,h:220,cx:0,cy:0,cw:220,ch:220"
-                 alt="Prof. Dr. Alina Roitberg">
-          </div>
-          <div class="keynote-text">
-            <p class="keynote-name">Prof. Dr. Alina Roitberg</p>
-            <p class="keynote-affiliation">University of Stuttgart, Germany</p>
-          </div>
-          <div class="keynote-logo-wrap">
-            <img class="keynote-logo"
-                 src="https://www.beschaeftigte.uni-stuttgart.de/uni-services/oeffentlichkeitsarbeit/corporate-design/cd-dateien/01_Logo/png/unistuttgart_logo_deutsch_cmyk_invertiert.png"
-                 alt="University of Stuttgart Logo">
-          </div>
-        </div>
-      </a>
-    </div>
-
     <!-- Jiaqi Ma -->
     <div class="card keynote-card">
       <a class="keynote-link" href="https://mobility-lab.seas.ucla.edu/about/" target="_blank">
@@ -1053,8 +1028,8 @@
       We welcome:
     </p>
     <ul>
-      <li>Novel full papers (max 8 pages, excluding references) for publication in the official proceedings.</li>
-      <li>4-page extended abstracts or 8-page versions of recently published work (non-archival, not included in proceedings).</li>
+      <li>Novel full papers (max. 8 pages, excluding references) for publication in the official proceedings.</li>
+      <li>4-page extended abstracts or 8-10 page versions of recently published work (non-archival, not included in proceedings).</li>
     </ul>
     <p>
       Submissions must follow the official CVPR 2026 style:
@@ -1070,7 +1045,7 @@
     </a>
 
     <ul>
-      <li><b>Paper Type</b>: Full papers (max 8 pages, excluding references)</li>
+      <li><b>Paper Type</b>: Full papers (max. 8 pages, excluding references)</li>
       <li><b>Included in Proceedings</b>: Yes (archival)</li>
       <li><b>Submission Opens</b>: February 1, 2026 (23:59 PST)</li>
       <li><b>Submission Deadline</b>: March 1, 2026 (23:59 PST)</li>
@@ -1087,7 +1062,7 @@
     </a>
 
     <ul>
-      <li><b>Paper Type</b>: 4-page extended abstracts or 8-page versions of recently published work</li>
+      <li><b>Paper Type</b>: 4-page extended abstracts or 8-10 page versions of recently published work</li>
       <li><b>Included in Proceedings</b>: No (non-archival)</li>
       <li><b>Submission Deadline</b>: May 1, 2026 (23:59 PST)</li>
       <li><b>Notification to Authors</b>: May 10, 2026</li>
@@ -1101,19 +1076,30 @@
   <div class="container is-max-desktop content">
     <h2 class="title">Paper Awards</h2>
     <ul class="awards-list">
-      <li>🏆 Best Paper Award</li>
-      <li>🏆 Best Paper Runner-Up Award</li>
-      <li>🏆 Best Poster Award</li>
-      <li>🏆 Best Keynote Presentation Award</li>
+      <li>🏆 Best Paper Award: $300</li>
+      <li>🏆 Best Paper Runner-Up Award: $200</li>
+      <li>🏆 Best Application Paper Award: $100</li>
+      <li>🏆 Best Poster Award Certificate</li>
+      <li>🏆 Best Keynote Presentation Award Certificate</li>
     </ul>
   </div>
+  <div class="container is-max-desktop content">
+    <h2 class="title">Challenge Awards</h2>
+    <ul class="awards-list">
+      <li>🏆 TUMTraf-V2X Challenge Winner Award: $100</li>
+      <li>🏆 doScenes Challenge Winner Award: $100</li>
+      <li>🏆 MDrive Challenge Winner Award: $100</li>
+    </ul>
+    Second and third place of each challenge will receive an award certificate.
+  </div>
+
 </section>
 
 <section class="section" id="challenge">
   <div class="container is-max-desktop content">
-    <h2 class="title">DriveX Challenge</h2>
+    <h2 class="title">DriveX Grand Challenge</h2>
     <p>
-      The DriveX Challenge fosters rigorous, reproducible benchmarking of cooperative perception and planning on real-world V2X datasets.
+      The DriveX Grand Challenge fosters rigorous, reproducible benchmarking of cooperative perception and planning on real-world datasets.
       Tracks are designed in close collaboration with dataset creators and industry partners.
     </p>
 
@@ -1122,7 +1108,7 @@
         <p>
           <b>V2I-Based Cooperative Perception</b><br>
           Infrastructure–vehicle fusion using
-          <a href="https://tum-traffic-dataset.github.io/tumtraf-v2x/" target="_blank">TUMTraf V2X CP</a>.
+          <a href="https://tum-traffic-dataset.github.io/tumtraf-v2x/" target="_blank">TUMTraf-V2X</a>.
           Focus on cooperative 3D detection and tracking with infrastructure-mounted LiDAR, radar, and cameras,
           emphasizing occlusion handling, long-range awareness, and reliability under real-world conditions.
         </p>
@@ -1130,47 +1116,36 @@
 
       <li>
         <p>
-          <b>Accident Scene Understanding &amp; Safety Reasoning</b><br>
+          <b>Natural Language Instruction for Human Interaction and Vision-Language Navigation</b><br>
           Built upon
-          <a href="https://accident-dataset.github.io/" target="_blank">TUMTraf Accid3nD</a>.
-          Participants design models for high-risk scenarios, proactive risk assessment,
-          and early accident prediction using cooperative perception signals to support Vision-Zero mobility.
+          <a href="https://mi3-lab.github.io/doScenes_challenge" target="_blank">doScenes</a>.
+          Participants design models for natural language instructions and visual language navigation
+          to facilitate research on human-vehicle instruction interactions.
         </p>
       </li>
 
       <li>
         <p>
-          <b>End-to-End Multi-Agent Autonomous Driving</b><br>
+          <b>Multi-Agent Reasoning</b><br>
           Using
-          <a href="https://mobility-lab.seas.ucla.edu/v2xpnp/" target="_blank">V2XPnP</a> and
-          <a href="https://mobility-lab.seas.ucla.edu/v2v4real/" target="_blank">V2V4Real</a>,
-          teams explore end-to-end policies and trajectory planning with single-vehicle,
-          multi-vehicle, and vehicle–infrastructure inputs. The track highlights how cooperative intelligence
-          improves policy learning, coordination, and safety.
+          <a href="https://todo" target="_blank">MDrive</a> 
+          teams explore a cooperative driving benchmark for end-to-end closed-loop multi-agent systems.
         </p>
       </li>
     </ul>
 
     <p><b>Competition Timeline</b></p>
     <ul>
-      <li><b>Competition Announcement</b>: coming soon! </li>
-      <li><b>Submission Deadline</b>: March 1, 2026 (23:59 PST)</li>
-      <li><b>Notification to Participants</b>: March 31, 2026</li>
+      <li><b>Competition Announcement</b>: Feb 9, 2026 </li>
+      <li><b>Competition Start</b>: Feb 15, 2026 (10 weeks)</li>
+      <li><b>Submission Deadline</b>: May, 1 (23:59 PST)</li>
+      <li><b>Notification to Participants</b>: May 10, 2026</li>
     </ul>
 
     <p>
-      Top-performing teams will be invited to present at the workshop. Detailed rules, baselines, and submission
-      instructions will be released on the official challenge page.
+      Top-performing teams will be invited to present at the workshop and will receive money prizes ($100) and award certificates. Detailed rules, baselines, and submission
+      instructions are available on the official challenge page.
     </p>
-  </div>
-</section>
-
-<section class="section">
-  <div class="container is-max-desktop content">
-    <h2 class="title">Challenge Awards</h2>
-    <ul class="awards-list">
-      <li>🏆 Challenge Winner Award (1st Place): Certificate, recognition, and prize</li>
-    </ul>
   </div>
 </section>
 
@@ -1375,7 +1350,7 @@
             </div>
             <div class="card-content">
               <p class="title is-7">Lena Wild</p>
-              <p class="organizer-affiliation">Stanford University</p>
+              <p class="organizer-affiliation">KTH & Stanford Uni.</p>
             </div>
           </div>
         </a>
@@ -1563,7 +1538,7 @@
             </div>
             <div class="card-content">
               <p class="title is-7">Prof. Alina Roitberg</p>
-              <p class="organizer-affiliation">University of Stuttgart</p>
+              <p class="organizer-affiliation">University of Hildesheim</p>
             </div>
           </div>
         </a>
@@ -1621,7 +1596,7 @@
             </div>
             <div class="card-content">
               <p class="title is-7">Prof. Bolei Zhou</p>
-              <p class="organizer-affiliation">University of California, Los Angeles</p>
+              <p class="organizer-affiliation">University of California, Los Angeles and Coco Robotics</p>
             </div>
           </div>
         </a>
