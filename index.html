@@ -474,6 +474,36 @@
       font-size: 0.9rem;
     }
 
+    .timeline-open-box {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      margin-top: 0.75rem;
+      padding: 0.45rem 0.9rem;
+      border-radius: var(--drivex-radius-full);
+      border: 1px solid rgba(45,212,191,0.45);
+      background: rgba(45,212,191,0.12);
+      color: var(--drivex-primary);
+      font-weight: 600;
+      font-size: 0.82rem;
+    }
+
+    .challenge-title-row {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      margin-bottom: 0.75rem;
+    }
+
+    .challenge-title-row .title {
+      margin-bottom: 0;
+    }
+
+    .challenge-title-row .timeline-open-box {
+      margin-top: 0;
+    }
+
     .footer-hero {
       background-color: #020817;
       border-top: 1px solid rgba(75,85,99,0.7);
@@ -1097,7 +1127,10 @@
 
 <section class="section" id="challenge">
   <div class="container is-max-desktop content">
-    <h2 class="title">DriveX Grand Challenge</h2>
+    <div class="challenge-title-row">
+      <h2 class="title">DriveX Grand Challenge</h2>
+      <p class="timeline-open-box"><span>&#128293;</span><span>All tracks are open now</span></p>
+    </div>
     <p>
       The DriveX Grand Challenge fosters rigorous, reproducible benchmarking of cooperative perception and planning on real-world datasets.
       Tracks are designed in close collaboration with dataset creators and industry partners.
