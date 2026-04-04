@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="keywords" content="DriveX, V2X, Cooperative Autonomous Driving, Foundation Models, CVPR 2026, Workshop">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>DriveX 2026 – Foundation Models for V2X-based Cooperative Autonomous Driving</title>
+  <title>DriveX 2026 – Foundation Models for Autonomous Driving</title>
 
   <link rel="icon" href="./static/images/favicon.svg">
   <link rel="stylesheet" href="./static/css/bulma.min.css">
@@ -484,12 +484,9 @@
 
     .schedule-session-logo-wrap {
       flex-shrink: 0;
-      min-width: 84px;
-      height: 52px;
-      padding: 0.4rem 0.65rem;
-      border-radius: 14px;
-      border: 1px solid rgba(148,163,253,0.16);
-      background: rgba(2,6,23,0.88);
+      min-width: 112px;
+      height: 64px;
+      padding: 0;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -497,7 +494,7 @@
 
     .schedule-session-logo {
       max-width: 100%;
-      max-height: 30px;
+      max-height: 44px;
       object-fit: contain;
     }
 
@@ -612,6 +609,114 @@
       font-size: 0.9rem;
     }
 
+    .timeline-open-box {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      margin-top: 0.75rem;
+      padding: 0.45rem 0.9rem;
+      border-radius: var(--drivex-radius-full);
+      border: 1px solid rgba(45,212,191,0.45);
+      background: rgba(45,212,191,0.12);
+      color: var(--drivex-primary);
+      font-weight: 600;
+      font-size: 0.82rem;
+    }
+
+    .challenge-title-row {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      margin-bottom: 0.75rem;
+    }
+
+    .challenge-title-row .title {
+      margin-bottom: 0;
+    }
+
+    .challenge-title-row .timeline-open-box {
+      margin-top: 0;
+    }
+
+    .navbar-end .navbar-item[href="#challenge"] {
+      color: #ccfbf1;
+      border: 1px solid rgba(45,212,191,0.42);
+      border-radius: var(--drivex-radius-full);
+      font-weight: 700;
+      margin: 0.2rem 0.35rem;
+      padding: 0.38rem 0.8rem;
+      background: rgba(45,212,191,0.12);
+    }
+
+    .navbar-end .navbar-item[href="#challenge"]:hover {
+      color: #f0fdfa;
+      background: rgba(45,212,191,0.24);
+    }
+
+    .anchor-buttons a[href="#challenge"] {
+      background: linear-gradient(to right, var(--drivex-primary), var(--drivex-accent));
+      color: #020817;
+      border-color: transparent;
+      font-weight: 700;
+      box-shadow: 0 10px 24px rgba(15,23,42,0.45);
+    }
+
+    .anchor-buttons a[href="#challenge"]:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 14px 30px rgba(15,23,42,0.5);
+    }
+
+    .challenge-track-buttons {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(215px, 1fr));
+      gap: 0.75rem;
+      margin: 1rem 0 1.15rem;
+    }
+
+    .challenge-track-button {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.2rem;
+      padding: 0.75rem 0.9rem;
+      border-radius: var(--drivex-radius-xl);
+      border: 1px solid rgba(45,212,191,0.36);
+      background:
+        radial-gradient(circle at top right, rgba(56,189,248,0.24), transparent 55%),
+        linear-gradient(135deg, rgba(45,212,191,0.16), rgba(15,23,42,0.95));
+      color: #f0fdfa;
+      box-shadow: var(--drivex-shadow-soft);
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    }
+
+    .challenge-track-button:hover {
+      color: #f0fdfa;
+      border-color: rgba(56,189,248,0.72);
+      transform: translateY(-2px);
+      box-shadow: 0 20px 38px rgba(15,23,42,0.52);
+    }
+
+    .challenge-track-button .track-label {
+      font-size: 0.68rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: rgba(224,242,254,0.78);
+      font-weight: 700;
+    }
+
+    .challenge-track-button .track-name {
+      font-size: 0.96rem;
+      font-weight: 700;
+      line-height: 1.25;
+    }
+
+    .challenge-track-button .track-date {
+      font-size: 0.78rem;
+      color: #99f6e4;
+      font-weight: 600;
+    }
+
     .footer-hero {
       background-color: #020817;
       border-top: 1px solid rgba(75,85,99,0.7);
@@ -662,8 +767,8 @@
       }
 
       .schedule-session-logo-wrap {
-        min-width: 76px;
-        height: 48px;
+        min-width: 96px;
+        height: 56px;
       }
     }
   </style>
@@ -718,7 +823,7 @@
         <span>In conjunction with CVPR 2026</span>
       </div>
       <h1 class="hero-title">
-        Foundation Models for V2X-based Cooperative Autonomous Driving
+        Foundation Models for Autonomous Driving
       </h1>
       <p class="hero-subtitle">
         A premier forum uniting academic, industry, and standards communities to shape the next generation of cooperative, foundation-model-driven autonomous driving and intelligent transportation systems.
@@ -784,7 +889,7 @@
   <div class="container is-max-desktop content">
     <h2 class="title">Introduction</h2>
     <p>
-      The 4th edition of the DriveX Workshop focuses on how foundation models and V2X-based cooperative systems can redefine perception,
+      The 4th edition of the DriveX Workshop focuses on how foundation models and cooperative systems can redefine perception,
       prediction, planning, and decision-making for autonomous driving and intelligent transportation infrastructure.
     </p>
     <p>
@@ -842,7 +947,7 @@
         </tr>
         <tr>
           <td>08:10 – 08:30</td>
-          <td>Opening Keynote <span class="schedule-label keynote"><i class="fa fa-microphone"></i>Keynote</span></td>
+          <td>Opening Keynote - Dr. Walter Zimmer (UCLA & TUM): Research Highlights<span class="schedule-label keynote"><i class="fa fa-microphone"></i>Keynote</span></td>
         </tr>
         <tr>
           <td>08:30 – 08:50</td>
@@ -969,8 +1074,8 @@
           </td>
         </tr>
         <tr>
-          <td>10:00 – 11:00</td>
-          <td>Poster Session I &amp; Coffee Break <span class="schedule-label poster"><i class="fa fa-image"></i>Posters</span></td>
+          <td>10:00 – 10:20</td>
+          <td>Keynotes 4 - Dr. Jamie Shotton (Wayve) <span class="schedule-label keynote"><i class="fa fa-microphone"></i>Keynote</span></td>
         </tr>
         <tr>
           <td>11:00 – 11:20</td>
@@ -1136,8 +1241,8 @@
           </td>
         </tr>
         <tr>
-          <td>14:20 – 15:00</td>
-          <td>Oral Presentations 1–4 <span class="schedule-label oral"><i class="fa fa-chalkboard"></i>Oral</span></td>
+          <td>14:30 – 14:50</td>
+          <td>Keynotes 10 - Prof. Holger Caesar (TU Delft) <span class="schedule-label keynote"><i class="fa fa-microphone"></i>Keynote</span></td>
         </tr>
         <tr>
           <td>15:00 – 16:00</td>
@@ -1175,19 +1280,47 @@
           </td>
         </tr>
         <tr>
-          <td>16:20 – 17:20</td>
-          <td>Panel II <span class="schedule-label panel"><i class="fa fa-comments"></i>Panel</span></td>
+          <td>15:30 – 16:00</td>
+          <td>Panel Discussion II: Academic Track <span class="schedule-label panel"><i class="fa fa-comments"></i>Panel</span></td>
         </tr>
         <tr>
-          <td>17:20 – 17:30</td>
+          <td>16:00 – 16:30</td>
+          <td>Poster Session IV &amp; Coffee Break <span class="schedule-label poster"><i class="fa fa-image"></i>Posters</span></td>
+        </tr>
+        <tr>
+          <td>16:30 – 16:40</td>
+          <td>Oral Presentation 1 <span class="schedule-label oral"><i class="fa fa-chalkboard"></i>Oral</span></td>
+        </tr>
+        <tr>
+          <td>16:40 – 16:50</td>
+          <td>Oral Presentation 2 <span class="schedule-label oral"><i class="fa fa-chalkboard"></i>Oral</span></td>
+        </tr>
+        <tr>
+          <td>16:50 – 17:00</td>
+          <td>Oral Presentation 3 <span class="schedule-label oral"><i class="fa fa-chalkboard"></i>Oral</span></td>
+        </tr>
+        <tr>
+          <td>17:00 – 17:10</td>
+          <td>Oral Presentation 4 <span class="schedule-label oral"><i class="fa fa-chalkboard"></i>Oral</span></td>
+        </tr>
+        <tr>
+          <td>17:10 – 17:20</td>
           <td>Oral Presentation 5 <span class="schedule-label oral"><i class="fa fa-chalkboard"></i>Oral</span></td>
         </tr>
         <tr>
-          <td>17:30 – 17:40</td>
-          <td>Awards Ceremony – Best Paper, Poster, Keynote, Challenge</td>
+          <td>17:20 – 17:30</td>
+          <td>Paper Awards Ceremony – Best Paper (1st, 2nd, 3rd), Best Poster, Best Keynote</td>
         </tr>
         <tr>
-          <td>17:40 – 18:00</td>
+          <td>17:30 – 17:40</td>
+          <td>Challenge Winner Presentation</td>
+        </tr>
+        <tr>
+          <td>17:40 – 17:50</td>
+          <td>Challenge Awards Ceremony</td>
+        </tr>
+        <tr>
+          <td>17:50 – 18:00</td>
           <td>Closing Remarks &amp; Group Photo</td>
         </tr>
         <tr>
@@ -1208,7 +1341,7 @@
   <div class="container is-max-desktop content">
     <h2 class="title">Paper Track</h2>
     <p>
-      DriveX 2026 invites high-quality contributions on foundation models, V2X-based cooperative perception,
+      DriveX 2026 invites high-quality contributions on foundation models, cooperative perception,
       large driving models, and related topics outlined above.
     </p>
     <p>
@@ -1236,8 +1369,8 @@
       <li><b>Included in Proceedings</b>: Yes (archival)</li>
       <li><b>Submission Opens</b>: February 1, 2026 (23:59 PST)</li>
       <li><b>Submission Deadline</b>: March 1, 2026 (23:59 PST)</li>
-      <li><b>Notification to Authors</b>: March 10, 2026</li>
-      <li><b>Camera-Ready Deadline</b>: March 20, 2026</li>
+      <li><b>Notification to Authors</b>: <s>March 10, 2026</s>March 17, 2026</li>
+      <li><b>Camera-Ready Deadline</b>: <s>March 20, 2026</s>March 27, 2026</li>
     </ul>
 
     <h3 class="subtitle">📗 Non-Archival Track</h3>
@@ -1284,18 +1417,37 @@
 
 <section class="section" id="challenge">
   <div class="container is-max-desktop content">
-    <h2 class="title">DriveX Grand Challenge</h2>
+    <div class="challenge-title-row">
+      <h2 class="title">DriveX Grand Challenge</h2>
+      <p class="timeline-open-box"><span>&#128293;</span><span>All tracks are open now</span></p>
+    </div>
     <p>
-      The DriveX Grand Challenge fosters rigorous, reproducible benchmarking of cooperative perception and planning on real-world datasets.
-      Tracks are designed in close collaboration with dataset creators and industry partners.
+    
     </p>
+    <div class="challenge-track-buttons">
+      <a class="challenge-track-button" href="https://www.codabench.org/competitions/14044" target="_blank" rel="noopener noreferrer">
+        <span class="track-label">Track 1</span>
+        <span class="track-name">TUMTraf-V2X Challenge</span>
+        <span class="track-date">Feb 18 - May 1</span>
+      </a>
+      <a class="challenge-track-button" href="https://mi3-lab.github.io/doScenes_challenge" target="_blank" rel="noopener noreferrer">
+        <span class="track-label">Track 2</span>
+        <span class="track-name">doScenes Challenge</span>
+        <span class="track-date">Feb 11 - May 20</span>
+      </a>
+      <a class="challenge-track-button" href="https://mdrive-challenge.github.io/" target="_blank" rel="noopener noreferrer">
+        <span class="track-label">Track 3</span>
+        <span class="track-name">MDrive Challenge</span>
+        <span class="track-date">Feb 20 - May 1</span>
+      </a>
+    </div>
 
     <ul>
       <li>
         <p>
           <b>V2I-Based Cooperative Perception</b><br>
           Infrastructure–vehicle fusion using
-          <a href="https://tum-traffic-dataset.github.io/tumtraf-v2x/" target="_blank">TUMTraf-V2X</a>.
+          <a href="https://www.codabench.org/competitions/14044" target="_blank">TUMTraf-V2X</a>.
           Focus on cooperative 3D detection and tracking with infrastructure-mounted LiDAR, radar, and cameras,
           emphasizing occlusion handling, long-range awareness, and reliability under real-world conditions.
         </p>
@@ -1315,7 +1467,7 @@
         <p>
           <b>Multi-Agent Reasoning</b><br>
           Using
-          <a href="https://todo" target="_blank">MDrive</a> 
+          <a href="https://mdrive-challenge.github.io/" target="_blank">MDrive</a> 
           teams explore a cooperative driving benchmark for end-to-end closed-loop multi-agent systems.
         </p>
       </li>
@@ -1341,6 +1493,8 @@
     <h2 class="title">Organizers</h2>
 
     <div class="columns is-multiline is-centered">
+
+<!--      first row-->
       <div class="column is-one-quarter">
         <a href="https://walzimmer.github.io/website/">
           <div class="card organizer-card">
@@ -1398,7 +1552,22 @@
       </div>
     </div>
 
+<!--    2. row-->
     <div class="columns is-multiline is-centered">
+      <div class="column is-one-quarter">
+        <a href="https://www.linkedin.com/in/ztqin/">
+          <div class="card organizer-card">
+            <div class="avatar-wrap">
+              <img class="is-rounded" src="https://scholar.googleusercontent.com/citations?view_op=medium_photo&user=pOA6uKMAAAAJ&citpid=11" alt="">
+            </div>
+            <div class="card-content">
+              <p class="title is-7">Dr. Xuewei (Tony) Qi</p>
+              <p class="organizer-affiliation">Motional AD LLC</p>
+            </div>
+          </div>
+        </a>
+      </div>
+
       <div class="column is-one-quarter">
         <a href="https://zewei-zhou.github.io/">
           <div class="card organizer-card">
@@ -1440,6 +1609,10 @@
           </div>
         </a>
       </div>
+    </div>
+
+<!--    3. row-->
+    <div class="columns is-multiline is-centered">
 
       <div class="column is-one-quarter">
         <a href="https://handsomeyun.github.io/">
@@ -1454,9 +1627,7 @@
           </div>
         </a>
       </div>
-    </div>
 
-    <div class="columns is-multiline is-centered">
       <div class="column is-one-quarter">
         <a href="https://www.linkedin.com/in/zzl03/">
           <div class="card organizer-card">
@@ -1498,6 +1669,10 @@
           </div>
         </a>
       </div>
+    </div>
+
+<!--    4. row-->
+    <div class="columns is-multiline is-centered">
 
       <div class="column is-one-quarter">
         <a href="https://www.linkedin.com/in/max-ronecker-929b72106/">
@@ -1512,9 +1687,6 @@
           </div>
         </a>
       </div>
-    </div>
-
-    <div class="columns is-multiline is-centered">
       <div class="column is-one-quarter">
         <a href="https://cxy1997.github.io/">
           <div class="card organizer-card">
@@ -1556,6 +1728,10 @@
           </div>
         </a>
       </div>
+    </div>
+
+<!--    5. row-->
+    <div class="columns is-multiline is-centered">
 
       <div class="column is-one-quarter">
         <a href="https://www.xiangbogao.com/">
@@ -1570,9 +1746,7 @@
           </div>
         </a>
       </div>
-    </div>
 
-    <div class="columns is-multiline is-centered">
       <div class="column is-one-quarter">
         <a href="http://luoping.me/author/haibao-yu/">
           <div class="card organizer-card">
@@ -1614,6 +1788,10 @@
           </div>
         </a>
       </div>
+    </div>
+
+<!--    6. row-->
+    <div class="columns is-multiline is-centered">
 
       <div class="column is-one-quarter">
         <a href="https://www.ce.cit.tum.de/air/people/jiajie-zhang-msc/">
@@ -1628,9 +1806,6 @@
           </div>
         </a>
       </div>
-    </div>
-
-    <div class="columns is-multiline is-centered">
       <div class="column is-one-quarter">
         <a href="https://www.sydney.edu.au/engineering/about/our-people/academic-staff/stephany-berrioperez.html">
           <div class="card organizer-card">
@@ -1672,6 +1847,10 @@
           </div>
         </a>
       </div>
+    </div>
+
+<!--    7. row-->
+    <div class="columns is-multiline is-centered">
 
       <div class="column is-one-quarter">
         <a href="https://edwardleelpz.github.io/">
@@ -1686,9 +1865,6 @@
           </div>
         </a>
       </div>
-    </div>
-
-    <div class="columns is-multiline is-centered">
       <div class="column is-one-quarter">
         <a href="https://www.linkedin.com/in/senthilyogamani/">
           <div class="card organizer-card">
@@ -1731,6 +1907,11 @@
         </a>
       </div>
 
+    </div>
+
+<!--    8. row-->
+    <div class="columns is-multiline is-centered">
+
       <div class="column is-one-quarter">
         <a href="https://graz.elsevierpure.com/en/persons/daniel-watzenig">
           <div class="card organizer-card">
@@ -1744,9 +1925,7 @@
           </div>
         </a>
       </div>
-    </div>
 
-    <div class="columns is-multiline is-centered">
       <div class="column is-one-quarter">
         <a href="https://profiles.ucr.edu/app/home/profile/guoyuanw">
           <div class="card organizer-card">
@@ -1789,7 +1968,11 @@
         </a>
       </div>
 
-      
+    </div>
+
+<!--    9. row-->
+    <div class="columns is-multiline is-centered">
+
       <div class="column is-one-quarter">
         <a href="https://olafwysocki.github.io/">
           <div class="card organizer-card">
@@ -1803,9 +1986,7 @@
           </div>
         </a>
       </div>
-    </div>
 
-    <div class="columns is-multiline is-centered">
       <div class="column is-one-quarter">
         <a href="https://mobility-lab.seas.ucla.edu/about/">
           <div class="card organizer-card">
@@ -1860,68 +2041,108 @@
     <h2 class="title">Invited Program Committee</h2>
     <div class="pc-members">
       <div class="pc-member">
-        <a href="https://profiles.ucr.edu/app/home/profile/barth" target="_blank">Prof. Dr. Matthew Barth</a>
-        <p>University of California, Riverside</p>
+        Wesley Maia
+        <p>UC Merced</p>
       </div>
       <div class="pc-member">
-        <a href="https://see-en.tongji.edu.cn/about_Us/Departments/Sino_German_Research_Center_for_Intelligent_Scie/Contact_Us_.htm" target="_blank">Prof. Dr. Huilin Yin</a>
-        <p>Tongji University</p>
+        Bo Yang
+        <p>UCLA</p>
       </div>
       <div class="pc-member">
-        <a href="https://ziranw.github.io/" target="_blank">Prof. Dr. Ziran Wang</a>
-        <p>Purdue University</p>
+        Camila Correa-Jullian
+        <p>UCLA</p>
       </div>
       <div class="pc-member">
-        <a href="https://www-lmd.ist.hokudai.ac.jp/member/guang-li/" target="_blank">Prof. Dr. Guang Li</a>
-        <p>Hokkaido University</p>
-      </div>
-      <div class="pc-member">
-        <a href="https://profiles.ucr.edu/app/home/profile/kanokb" target="_blank">Prof. Dr. Kanok Boriboonsomsin</a>
+        Prof.Jiachen Li
         <p>UC Riverside</p>
       </div>
       <div class="pc-member">
-        <a href="https://www.cs.cit.tum.de/camp/members/senior-research-scientists/federico-tombari/" target="_blank">PD Dr. habil. Federico Tombari</a>
-        <p>Google</p>
+        Afnan Alofi
+        <p>Nourah Bint Abdulrahman University</p>
       </div>
       <div class="pc-member">
-        <a href="https://hangqiu.github.io/" target="_blank">Prof. Dr. Hang Qiu</a>
+        Peizheng Li
+        <p>Uni Tübingen</p>
+      </div>
+      <div class="pc-member">
+        Marc Unyueta
+        <p>Cruise</p>
+      </div>
+      <div class="pc-member">
+        Kianna Ng
+        <p>UC Merced</p>
+      </div>
+      <div class="pc-member">
+        Xu Han
+        <p>UCLA</p>
+      </div>
+      <div class="pc-member">
+        Wei Cao
+        <p>Uni. of Illinois at Urbana-Champaign</p>
+      </div>
+      <div class="pc-member">
+        Angel Martinez-Sanchez
+        <p>UC Merced</p>
+      </div>
+      <div class="pc-member">
+        Prof.Ziran Wang
+        <p>Purdue Uni.</p>
+      </div>
+      <div class="pc-member">
+        Qiyuan Wu
+        <p>Cornell Uni</p>
+      </div>
+      <div class="pc-member">
+        Erika Maquiling
+        <p>UC Merced</p>
+      </div>
+      <div class="pc-member">
+        Parthib Roy
+        <p>UC Merced</p>
+      </div>
+      <div class="pc-member">
+        Zhenzhen Liu
+        <p>Cornell Uni.</p>
+      </div>
+      <div class="pc-member">
+        Kunlin Cai
+        <p>UCLA</p>
+      </div>
+      <div class="pc-member">
+        Markus Gross
+        <p>Fraunhofer IVI & TUM</p>
+      </div>
+      <div class="pc-member">
+        Prof. Hang Qiu
         <p>UC Riverside</p>
       </div>
       <div class="pc-member">
-        <a href="https://jiachenli94.github.io/" target="_blank">Prof. Dr. Jiachen Li</a>
-        <p>UC Riverside</p>
+        Katie Z Luo
+        <p>Stanford</p>
       </div>
       <div class="pc-member">
-        <a href="https://vztu.github.io/" target="_blank">Prof. Dr. Zhengzhong Tu</a>
-        <p>Texas A&amp;M University</p>
+        Cheng Perng Phoo
+        <p>Waymo</p>
       </div>
       <div class="pc-member">
-        <a href="https://www.linkedin.com/in/christophpilz/" target="_blank">Dr. Christoph Pilz</a>
-        <p>Virtual Vehicle</p>
+        Zhenghao Peng
+        <p>UCLA</p>
       </div>
       <div class="pc-member">
-        <a href="https://www.linkedin.com/in/markusschratter" target="_blank">Dr. Markus Schratter</a>
-        <p>Virtual Vehicle</p>
+        Shiyu Jin
+        <p>UC Berkeley</p>
       </div>
       <div class="pc-member">
-        <a href="https://www.xiangbogao.com/" target="_blank">Xiangbo Gao</a>
-        <p>Texas A&amp;M University</p>
+        Johnson Liu
+        <p>UCLA</p>
       </div>
       <div class="pc-member">
-        <a href="https://www.linkedin.com/in/felix-neumann-7993b0167/" target="_blank">Felix Neumann</a>
-        <p>Siemens</p>
+        Haoxuan Ma
+        <p>UCLA</p>
       </div>
       <div class="pc-member">
-        <a href="https://online.tugraz.at/tug_online/visitenkarte.show_vcard?pPersonenId=BDB643F60C7AC4A1" target="_blank">Kenan Ahmic</a>
-        <p>Graz University of Technology</p>
-      </div>
-      <div class="pc-member">
-        <a href="https://vveicao.github.io/" target="_blank">Wei Cao</a>
-        <p>UIUC</p>
-      </div>
-      <div class="pc-member">
-        <a href="https://www.linkedin.com/in/markusgross42/" target="_blank">Markus Gross</a>
-        <p>Fraunhofer IVI &amp; TUM</p>
+        Yifan Liu
+        <p>UCLA</p>
       </div>
     </div>
   </div>
@@ -1937,7 +2158,8 @@
     <!-- Sponsor Logos -->
     <div style="display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 2rem; margin-bottom: 2rem;">
       <div style="text-align: center;">
-        <img src="https://logodownload.org/wp-content/uploads/2017/04/qualcomm-logo-3.png" alt="Qualcomm Logo" style="width: 150px; height: auto;">
+        <img src="static/images/motional_logo.webp" alt="Motional Logo" style="height: 500px; width: auto;">
+        <img src="https://logodownload.org/wp-content/uploads/2017/04/qualcomm-logo-3.png" alt="Qualcomm Logo" style="height: 150px; width: auto;">
       </div>
     </div>
     
@@ -1947,7 +2169,7 @@
     </p>
     <p style="text-align: center;">
       For sponsorship opportunities, please contact:
-      <a href="mailto:walter.zimmer@cs.tum.edu">walter.zimmer@cs.tum.edu</a>.
+      <a href="mailto:wz@ucla.edu">wz@ucla.edu</a>.
     </p>
   </div>
 </section>
@@ -1958,7 +2180,7 @@
   <div class="hero-body">
     <div class="container has-text-centered">
       <p class="footer-text">
-        DriveX 2026 – Foundation Models for V2X-based Cooperative Autonomous Driving<br>
+        DriveX 2026 – Foundation Models for Autonomous Driving<br>
         In conjunction with CVPR 2026 • Denver, Colorado • June 3, 2026
       </p>
       <div class="visitor-counter-card">
@@ -1971,11 +2193,9 @@
 
 <style>
 .footer-hero-banner {
-  width: 100%;
-  height: 260px; 
-  background: url("https://media.eventhosts.cc/Conferences/CVPR2026/img/CVPR_Denver_2026.jpg")
-    center top / cover no-repeat;  
-  margin: 0;
+  height: 600px;
+  background: url("static/images/CVPR_Denver_2026.jpg");
+  margin: 0 auto;
   padding: 0;
   border-top: 1px solid rgba(255, 255, 255, 0.08);
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
