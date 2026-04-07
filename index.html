@@ -400,6 +400,37 @@
       background: rgba(9,9,11,0.98);
     }
 
+    a.schedule-oral-paper-link {
+      display: block;
+      margin-top: 0.4rem;
+      max-width: 52rem;
+      font-size: 0.78rem;
+      font-weight: 500;
+      color: #e5e7eb;
+      line-height: 1.5;
+      text-decoration: none;
+      transition: color 0.15s ease, border-color 0.15s ease;
+    }
+
+    a.schedule-oral-paper-link:hover {
+      color: var(--drivex-accent);
+    }
+
+    a.schedule-oral-paper-link:focus-visible {
+      outline: 2px solid var(--drivex-accent);
+      outline-offset: 2px;
+      border-radius: 4px;
+    }
+
+    a.schedule-oral-paper-link--placeholder {
+      border-bottom: 1px dashed rgba(148, 163, 253, 0.4);
+      cursor: help;
+    }
+
+    a.schedule-oral-paper-link--placeholder:hover {
+      color: #cbd5e1;
+    }
+
     .schedule-label.social {
       border-color: rgba(236,72,153,0.5);
       color: #fb7185;
@@ -805,59 +836,69 @@
       font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, monospace;
     }
 
-    .sponsor-intro-nomadic {
-      max-width: 42rem;
-      margin: 0 auto 1.5rem;
-      text-align: center;
-      font-size: 0.88rem;
-      line-height: 1.65;
-      color: var(--drivex-text-soft);
-    }
-
-    .sponsor-intro-nomadic strong {
-      color: #f9fafb;
-      font-weight: 650;
-    }
-
-    .sponsor-logos {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 2.25rem 2.75rem;
+    .sponsor-tiles {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 2rem 2.25rem;
       margin-bottom: 2rem;
+      align-items: start;
     }
 
-    .sponsor-logos a {
+    .sponsor-tile {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 1rem;
+    }
+
+    .sponsor-tile > a {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      padding: 0.45rem 0.65rem;
-      border-radius: 14px;
+      padding: 0.65rem 1rem;
+      border-radius: 16px;
       transition: background 0.2s ease, transform 0.2s ease;
     }
 
-    .sponsor-logos a:hover {
+    .sponsor-tile > a:hover {
       background: rgba(45, 212, 191, 0.07);
       transform: translateY(-2px);
     }
 
-    .sponsor-logos a:focus-visible {
+    .sponsor-tile > a:focus-visible {
       outline: 2px solid var(--drivex-primary);
       outline-offset: 3px;
     }
 
     .sponsor-logo-img {
       display: block;
-      height: 48px;
+      height: 100px;
       width: auto;
-      max-width: 200px;
+      max-width: 280px;
       object-fit: contain;
     }
 
     .sponsor-logo-img--nomadic {
-      height: 56px;
-      width: 56px;
+      height: 120px;
+      width: 120px;
+      max-width: none;
+    }
+
+    .sponsor-tile-text {
+      margin: 0;
+      max-width: 26rem;
+      font-size: 0.78rem;
+      line-height: 1.65;
+      color: var(--drivex-text-soft);
+      text-align: center;
+    }
+
+    @media screen and (max-width: 900px) {
+      .sponsor-tiles {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
     }
 
     .footer-hero {
@@ -1547,23 +1588,39 @@
         </tr>
         <tr>
           <td>16:30 – 16:40</td>
-          <td>Oral Presentation 1 <span class="schedule-label oral"><i class="fa fa-chalkboard"></i>Oral</span></td>
+          <td>
+            Oral Presentation 1 <span class="schedule-label oral"><i class="fa fa-chalkboard"></i>Oral</span>
+            <!-- Oral 1: replace href below with paper link; then remove class schedule-oral-paper-link--placeholder -->
+            <a class="schedule-oral-paper-link schedule-oral-paper-link--placeholder" href="https://openreview.net/forum?id=eCctcim24H&referrer=%5BProgram%20Chair%20Console%5D(%2Fgroup%3Fid%3Dthecvf.com%2FCVPR%2F2026%2FWorkshop%2FDriveX_Archival_Track%2FProgram_Chairs%23submission-status)" target="_blank" rel="noopener noreferrer" title="Add paper URL in index.html">Calibration-Free View-Agnostic Monocular 3D Object Detection for Urban Scenes</a>
+          </td>
         </tr>
         <tr>
           <td>16:40 – 16:50</td>
-          <td>Oral Presentation 2 <span class="schedule-label oral"><i class="fa fa-chalkboard"></i>Oral</span></td>
+          <td>
+            Oral Presentation 2 <span class="schedule-label oral"><i class="fa fa-chalkboard"></i>Oral</span>
+            <a class="schedule-oral-paper-link schedule-oral-paper-link--placeholder" href="https://openreview.net/forum?id=JkPJVxD0q3&referrer=%5BProgram%20Chair%20Console%5D(%2Fgroup%3Fid%3Dthecvf.com%2FCVPR%2F2026%2FWorkshop%2FDriveX_Archival_Track%2FProgram_Chairs%23submission-status)" target="_blank" rel="noopener noreferrer" title="Add paper URL in index.html">4-D Radar Meets LiDAR and Camera: Cooperative Perception under Adverse Weather</a>
+          </td>
         </tr>
         <tr>
           <td>16:50 – 17:00</td>
-          <td>Oral Presentation 3 <span class="schedule-label oral"><i class="fa fa-chalkboard"></i>Oral</span></td>
+          <td>
+            Oral Presentation 3 <span class="schedule-label oral"><i class="fa fa-chalkboard"></i>Oral</span>
+            <a class="schedule-oral-paper-link schedule-oral-paper-link--placeholder" href="https://openreview.net/forum?id=ctsQ0wQP7b&referrer=%5BProgram%20Chair%20Console%5D(%2Fgroup%3Fid%3Dthecvf.com%2FCVPR%2F2026%2FWorkshop%2FDriveX_Archival_Track%2FProgram_Chairs%23submission-status)" target="_blank" rel="noopener noreferrer" title="Add paper URL in index.html">Rethinking Intermediate Module Utilization in V2X End-to-End Autonomous Driving</a>
+          </td>
         </tr>
         <tr>
           <td>17:00 – 17:10</td>
-          <td>Oral Presentation 4 <span class="schedule-label oral"><i class="fa fa-chalkboard"></i>Oral</span></td>
+          <td>
+            Oral Presentation 4 <span class="schedule-label oral"><i class="fa fa-chalkboard"></i>Oral</span>
+            <a class="schedule-oral-paper-link schedule-oral-paper-link--placeholder" href="https://openreview.net/forum?id=hcp4BpBf9r&referrer=%5BProgram%20Chair%20Console%5D(%2Fgroup%3Fid%3Dthecvf.com%2FCVPR%2F2026%2FWorkshop%2FDriveX_Archival_Track%2FProgram_Chairs%23submission-status)" target="_blank" rel="noopener noreferrer" title="Add paper URL in index.html">DinoRADE: Full Spectral Radar-Camera Fusion with Vision Foundation Model Features for Multi-class Object Detection in Adverse Weather</a>
+          </td>
         </tr>
         <tr>
           <td>17:10 – 17:20</td>
-          <td>Oral Presentation 5 <span class="schedule-label oral"><i class="fa fa-chalkboard"></i>Oral</span></td>
+          <td>
+            Oral Presentation 5 <span class="schedule-label oral"><i class="fa fa-chalkboard"></i>Oral</span>
+            <a class="schedule-oral-paper-link schedule-oral-paper-link--placeholder" href="https://openreview.net/forum?id=qByiOX1j9C&referrer=%5BProgram%20Chair%20Console%5D(%2Fgroup%3Fid%3Dthecvf.com%2FCVPR%2F2026%2FWorkshop%2FDriveX_Archival_Track%2FProgram_Chairs%23submission-status)" target="_blank" rel="noopener noreferrer" title="Add paper URL in index.html">GaussianDet3D: Bridging Gaussian Splatting and Sparse LiDAR Detection for Multi-View 3D Object Detection</a>
+          </td>
         </tr>
         <tr>
           <td>17:20 – 17:30</td>
@@ -2445,19 +2502,31 @@
 <section class="section" id="sponsors">
   <div class="container is-max-desktop content">
     <h2 class="title">Sponsors</h2>
-    <p class="sponsor-intro-nomadic">
-      Nomadic's Visual AI automatically discovers rare edge cases, multi-agent interactions, and safety-critical scenarios from fleet-scale video and V2X sensor streams. The platform provides the high-signal training data and evaluation benchmarks that foundation models need to bridge simulation and real-world deployment, trusted by the world's leading autonomous vehicle and robotics companies.
-    </p>
-    <div class="sponsor-logos">
-      <a href="https://nomadicml.com/" target="_blank" rel="noopener noreferrer" aria-label="NomadicML (opens in new tab)">
-        <img class="sponsor-logo-img sponsor-logo-img--nomadic" src="static/images/nomadicml_logo.svg" width="56" height="56" alt="NomadicML">
-      </a>
-      <a href="http://motional.com/" target="_blank" rel="noopener noreferrer" aria-label="Motional (opens in new tab)">
-        <img class="sponsor-logo-img" src="static/images/motional_logo.webp" alt="Motional">
-      </a>
-      <a href="https://www.qualcomm.com/" target="_blank" rel="noopener noreferrer" aria-label="Qualcomm (opens in new tab)">
-        <img class="sponsor-logo-img" src="https://logodownload.org/wp-content/uploads/2017/04/qualcomm-logo-3.png" alt="Qualcomm">
-      </a>
+    <div class="sponsor-tiles">
+      <div class="sponsor-tile">
+        <a href="http://motional.com/" target="_blank" rel="noopener noreferrer" aria-label="Motional (opens in new tab)">
+          <img class="sponsor-logo-img" src="static/images/motional_logo.webp" width="280" height="100" alt="Motional">
+        </a>
+        <p class="sponsor-tile-text">
+          Motional is a leading autonomous driving technology company, established as a venture between Hyundai Motor Group and Aptiv, that develops Level 4 driverless vehicles designed for safe and accessible urban transportation. The company currently operates commercial robotaxi and delivery services using its all-electric Hyundai IONIQ 5 platform through high-profile partnerships with networks such as Uber and Lyft.
+        </p>
+      </div>
+      <div class="sponsor-tile">
+        <a href="https://nomadicml.com/" target="_blank" rel="noopener noreferrer" aria-label="NomadicML (opens in new tab)">
+          <img class="sponsor-logo-img sponsor-logo-img--nomadic" src="static/img/nomadic_logo_light.svg" width="120" height="120" alt="NomadicML">
+        </a>
+        <p class="sponsor-tile-text">
+          Nomadic&apos;s Visual AI automatically discovers rare edge cases, multi-agent interactions, and safety-critical scenarios from fleet-scale video and V2X sensor streams. The platform provides the high-signal training data and evaluation benchmarks that foundation models need to bridge simulation and real-world deployment, trusted by the world&apos;s leading autonomous vehicle and robotics companies.
+        </p>
+      </div>
+      <div class="sponsor-tile">
+        <a href="https://www.qualcomm.com/" target="_blank" rel="noopener noreferrer" aria-label="Qualcomm (opens in new tab)">
+          <img class="sponsor-logo-img" src="https://logodownload.org/wp-content/uploads/2017/04/qualcomm-logo-3.png" width="280" height="100" alt="Qualcomm">
+        </a>
+        <p class="sponsor-tile-text">
+          Qualcomm is a leading technology company whose Snapdragon Ride platform combines high-performance automotive chips, AI-driven perception, and advanced driver-assistance software to enable scalable ADAS and automated driving capabilities for automakers worldwide. Its Snapdragon Ride Pilot system, co-developed with partners like BMW and integrated with real-world data, supports hands-free highway and urban driving scenarios while helping vehicle makers accelerate safety-focused automated driving solutions.
+        </p>
+      </div>
     </div>
     <p style="text-align: center; margin-bottom: 1.5rem;">
       DriveX 2026 welcomes sponsorship from industry, startups, and institutions interested in foundation models,
@@ -2567,6 +2636,15 @@
       btn.addEventListener('click', function () {
         anchorButtons.forEach(function (b) { b.classList.remove('is-active'); });
         btn.classList.add('is-active');
+      });
+    });
+
+    document.querySelectorAll('.schedule-oral-paper-link').forEach(function (a) {
+      a.addEventListener('click', function (e) {
+        var href = a.getAttribute('href');
+        if (!href || href === '#') {
+          e.preventDefault();
+        }
       });
     });
 
