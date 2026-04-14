@@ -894,6 +894,81 @@
       text-align: center;
     }
 
+    .accepted-papers-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .accepted-paper-card {
+      background: var(--drivex-card-bg);
+      border-radius: var(--drivex-radius-xl);
+      border: var(--drivex-border-subtle);
+      box-shadow: var(--drivex-shadow-soft);
+      padding: 1rem 1rem 0.95rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.55rem;
+      min-height: 160px;
+    }
+
+    .accepted-paper-title {
+      margin: 0;
+      color: #f9fafb;
+      font-weight: 650;
+      font-size: 0.92rem;
+      line-height: 1.35;
+    }
+
+    .accepted-paper-meta {
+      margin: 0;
+      font-size: 0.75rem;
+      color: var(--drivex-text-soft);
+      line-height: 1.5;
+    }
+
+    .accepted-paper-actions {
+      margin-top: auto;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      align-items: center;
+    }
+
+    .accepted-paper-pdf {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      padding: 0.4rem 0.85rem;
+      border-radius: var(--drivex-radius-full);
+      border: 1px solid rgba(56,189,248,0.4);
+      background: rgba(2,6,23,0.65);
+      color: #e5e7eb;
+      font-size: 0.72rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: transform 0.18s ease, border-color 0.18s ease, color 0.18s ease;
+    }
+
+    .accepted-paper-pdf:hover {
+      transform: translateY(-1px);
+      border-color: rgba(45,212,191,0.6);
+      color: var(--drivex-primary);
+    }
+
+    .accepted-paper-pdf.is-placeholder {
+      border-style: dashed;
+      cursor: help;
+      opacity: 0.9;
+    }
+
+    .accepted-paper-note {
+      margin-top: 0.8rem;
+      font-size: 0.78rem;
+      color: var(--drivex-text-soft);
+    }
+
     @media screen and (max-width: 900px) {
       .sponsor-tiles {
         grid-template-columns: 1fr;
@@ -983,6 +1058,7 @@
       <a class="navbar-item" href="#schedule">Schedule</a>
       <a class="navbar-item" href="#speakers">Speakers</a>
       <a class="navbar-item" href="#paper-track">Paper Track</a>
+      <a class="navbar-item" href="#accepted-papers">Accepted Papers</a>
       <a class="navbar-item" href="#challenge">Challenge</a>
       <a class="navbar-item" href="#organizers">Organizers</a>
       <a class="navbar-item" href="#pc">Program Committee</a>
@@ -1061,6 +1137,7 @@
       <a href="#schedule" class="button is-small is-rounded is-light">Schedule</a>
       <a href="#speakers" class="button is-small is-rounded is-light">Speakers</a>
       <a href="#paper-track" class="button is-small is-rounded is-light">Paper Track</a>
+      <a href="#accepted-papers" class="button is-small is-rounded is-light">Accepted Papers</a>
       <a href="#challenge" class="button is-small is-rounded is-light">Challenge</a>
       <a href="#organizers" class="button is-small is-rounded is-light">Organizers</a>
       <a href="#pc" class="button is-small is-rounded is-light">Program Committee</a>
@@ -1736,6 +1813,87 @@
       <li><b>Notification to Authors</b>: May 10, 2026</li>
       <li><b>Camera-Ready Deadline</b>: May 20, 2026</li>
     </ul>
+
+  </div>
+</section>
+
+<section class="section" id="accepted-papers">
+  <div class="container is-max-desktop content">
+    <h2 class="title">Accepted Papers</h2>
+    <div class="accepted-papers-grid">
+      <div class="accepted-paper-card">
+        <p class="accepted-paper-title">V2X-UniPool: Unifying Multimodal Perception and Knowledge Reasoning for Autonomous Driving</p>
+        <p class="accepted-paper-meta">Xuewen Luo, Fengze Yang, Ding Fan, Xiangbo Gao, Bo Yu, Zihao Li, Zhengzhong Tu, Yang Zhou, Chenxi Liu</p>
+        <div class="accepted-paper-actions">
+          <a class="accepted-paper-pdf is-placeholder" href="static/pdf/1_V2X_UniPool_Unifying_Multimo.pdf" target="_blank" rel="noopener noreferrer" title="Replace with PDF link">View PDF</a>
+        </div>
+      </div>
+
+      <div class="accepted-paper-card">
+        <p class="accepted-paper-title">Rethinking Intermediate Module Utilization in V2X End-to-End Autonomous Driving</p>
+        <p class="accepted-paper-meta">Yiming Kan, Huilin Yin, Daniel Watzenig</p>
+        <div class="accepted-paper-actions">
+          <a class="accepted-paper-pdf is-placeholder" href="static/pdf/2_Rethinking_Intermediate_Modu.pdf" target="_blank" rel="noopener noreferrer" title="Replace with PDF link">View PDF</a>
+        </div>
+      </div>
+
+      <div class="accepted-paper-card">
+        <p class="accepted-paper-title">DRIVEXQA: Cross-modal Visual Question Answering for Adverse Driving Scene Understanding</p>
+        <p class="accepted-paper-meta">Mingzhe Tao, Ruiping Liu, Junwei Zheng, Yufan Chen, Kedi Ying, M. Saquib Sarfraz, Kailun Yang, Jiaming Zhang, Rainer Stiefelhagen</p>
+        <div class="accepted-paper-actions">
+          <a class="accepted-paper-pdf is-placeholder" href="static/pdf/10_DRIVEXQA_Cross_modal_Visual.pdf" target="_blank" rel="noopener noreferrer" title="Replace with PDF link">View PDF</a>
+        </div>
+      </div>
+
+
+      <div class="accepted-paper-card">
+        <p class="accepted-paper-title">IAO-SLAM: Real-time Illumination-Aware Object SLAM for Robust Perception in Low-Light Environments</p>
+        <p class="accepted-paper-meta">Pengju Zhen, Huilin Yin, Linchuan Zhang, Xin Su</p>
+        <div class="accepted-paper-actions">
+          <a class="accepted-paper-pdf is-placeholder" href="static/pdf/23_IAO_SLAM_Real_time_Illumina.pdf" target="_blank" rel="noopener noreferrer" title="Replace with PDF link">View PDF</a>
+        </div>
+      </div>
+
+      <div class="accepted-paper-card">
+        <p class="accepted-paper-title">Calibration-Free View-Agnostic Monocular 3D Object Detection for Urban Scenes</p>
+        <p class="accepted-paper-meta">Mehmet Kerem Turkcan, Devika Gumaste, Zoran Kostic</p>
+        <div class="accepted-paper-actions">
+          <a class="accepted-paper-pdf is-placeholder" href="static/pdf/13_Calibration_Free_View_Agnos.pdf" target="_blank" rel="noopener noreferrer" title="Replace with PDF link">View PDF</a>
+        </div>
+      </div>
+
+      <div class="accepted-paper-card">
+        <p class="accepted-paper-title">Importance-Driven 3D Gaussian SLAM for Efficient Mapping and Communication-Aware Sharing</p>
+        <p class="accepted-paper-meta">Zhaolin Yang, Huilin Yin, Linchuan Zhang, Mingyu Liu, Alois Knoll</p>
+        <div class="accepted-paper-actions">
+          <a class="accepted-paper-pdf is-placeholder" href="static/pdf/24_Importance_Driven_3D_Gaussi.pdf" target="_blank" rel="noopener noreferrer" title="Replace with PDF link">View PDF</a>
+        </div>
+      </div>
+
+      <div class="accepted-paper-card">
+        <p class="accepted-paper-title">4-D Radar Meets LiDAR and Camera: Cooperative Perception under Adverse Weather</p>
+        <p class="accepted-paper-meta">Melih Yazgan, Iramm Hamdard, Qiyuan Wu, Svetlana Pavlitska, J. Marius Zöllner</p>
+        <div class="accepted-paper-actions">
+          <a class="accepted-paper-pdf is-placeholder" href="static/pdf/26_4D_Radar_Meets_LiDAR_and_Ca.pdf" target="_blank" rel="noopener noreferrer" title="Replace with PDF link">View PDF</a>
+        </div>
+      </div>
+
+      <div class="accepted-paper-card">
+        <p class="accepted-paper-title">CrashSight: A Phase-Aware, Infrastructure-Centric Video Benchmark for Traffic Crash Scene Understanding and Reasoning</p>
+        <p class="accepted-paper-meta">Rui Gan, Junyi Ma, Pei Li, Xingyou Yang, Kai Cheng, Sikai Chen, Bin Ran</p>
+        <div class="accepted-paper-actions">
+          <a class="accepted-paper-pdf is-placeholder" href="static/pdf/27_CrashSight_A_Phase_Aware_In.pdf" target="_blank" rel="noopener noreferrer" title="Replace with PDF link">View PDF</a>
+        </div>
+      </div>
+
+      <div class="accepted-paper-card">
+        <p class="accepted-paper-title">GaussianDet3D: Bridging Gaussian Splatting and Sparse LiDAR Detection for Multi-View 3D Object Detection</p>
+        <p class="accepted-paper-meta">Malaz Tamim, Wenzhao Zheng, Johannes Michael Meier, Daniel Cremers, Kurt Keutzer</p>
+        <div class="accepted-paper-actions">
+          <a class="accepted-paper-pdf is-placeholder" href="static/pdf/30_GaussianDet3D_Bridging_Gaus.pdf" target="_blank" rel="noopener noreferrer" title="Replace with PDF link">View PDF</a>
+        </div>
+      </div>
+    </div>
 
   </div>
 </section>
@@ -2673,6 +2831,15 @@
     });
 
     document.querySelectorAll('.schedule-oral-paper-link').forEach(function (a) {
+      a.addEventListener('click', function (e) {
+        var href = a.getAttribute('href');
+        if (!href || href === '#') {
+          e.preventDefault();
+        }
+      });
+    });
+
+    document.querySelectorAll('.accepted-paper-pdf').forEach(function (a) {
       a.addEventListener('click', function (e) {
         var href = a.getAttribute('href');
         if (!href || href === '#') {
