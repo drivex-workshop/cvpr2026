@@ -836,12 +836,35 @@
       font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, monospace;
     }
 
+    .sponsor-tier-title {
+      margin-top: 1.35rem;
+      margin-bottom: 0.65rem;
+      font-weight: 750;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: rgba(226, 232, 240, 0.92);
+    }
+
     .sponsor-tiles {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 2rem 2.25rem;
-      margin-bottom: 2rem;
+      margin-bottom: 1.25rem;
       align-items: start;
+    }
+
+    .sponsor-tiles--ultimate {
+      grid-template-columns: 1fr;
+      justify-items: center;
+    }
+
+    .sponsor-tiles--platinum {
+      grid-template-columns: repeat(auto-fit, minmax(280px, 420px));
+      justify-content: center;
+    }
+
+    .sponsor-tiles--gold {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
     }
 
     .sponsor-tile {
@@ -853,6 +876,9 @@
     }
 
     .sponsor-tile > a {
+      width: 100%;
+      max-width: 420px;
+      min-height: 140px;
       display: inline-flex;
       align-items: center;
       justify-content: center;
@@ -877,12 +903,34 @@
       width: auto;
       max-width: 280px;
       object-fit: contain;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .sponsor-logo-img--motional {
+      height: 140px;
+      max-width: 360px;
     }
 
     .sponsor-logo-img--nomadic {
       height: 120px;
       width: 120px;
       max-width: none;
+    }
+
+    .sponsor-logo-fallback {
+      min-height: 100px;
+      min-width: min(280px, 100%);
+      padding: 0.75rem 1rem;
+      border-radius: 16px;
+      border: 1px solid rgba(148, 163, 184, 0.25);
+      background: rgba(15, 23, 42, 0.55);
+      color: rgba(248, 250, 252, 0.92);
+      font-weight: 750;
+      letter-spacing: 0.02em;
+      display: grid;
+      place-items: center;
+      text-align: center;
     }
 
     .sponsor-tile-text {
@@ -2730,15 +2778,20 @@
 <section class="section" id="sponsors">
   <div class="container is-max-desktop content">
     <h2 class="title">Sponsors</h2>
-    <div class="sponsor-tiles">
+    <h3 class="subtitle sponsor-tier-title">Ultimate</h3>
+    <div class="sponsor-tiles sponsor-tiles--ultimate">
       <div class="sponsor-tile">
         <a href="http://motional.com/" target="_blank" rel="noopener noreferrer" aria-label="Motional (opens in new tab)">
-          <img class="sponsor-logo-img" src="static/images/motional_logo.webp" width="280" height="100" alt="Motional">
+          <img class="sponsor-logo-img sponsor-logo-img--motional" src="static/images/motional_logo.webp" width="360" height="140" alt="Motional">
         </a>
         <p class="sponsor-tile-text">
           Motional is a leading autonomous driving technology company, established as a venture between Hyundai Motor Group and Aptiv, that develops Level 4 driverless vehicles designed for safe and accessible urban transportation. The company currently operates commercial robotaxi and delivery services using its all-electric Hyundai IONIQ 5 platform through high-profile partnerships with networks such as Uber and Lyft.
         </p>
       </div>
+    </div>
+
+    <h3 class="subtitle sponsor-tier-title">Platinum</h3>
+    <div class="sponsor-tiles sponsor-tiles--platinum">
       <div class="sponsor-tile">
         <a href="https://nomadicml.com/" target="_blank" rel="noopener noreferrer" aria-label="NomadicML (opens in new tab)">
           <img class="sponsor-logo-img sponsor-logo-img--nomadic" src="static/img/nomadic_logo_light.svg" width="120" height="120" alt="NomadicML">
@@ -2747,12 +2800,34 @@
           Nomadic&apos;s Visual AI automatically discovers rare edge cases, multi-agent interactions, and safety-critical scenarios from fleet-scale video and V2X sensor streams. The platform provides the high-signal training data and evaluation benchmarks that foundation models need to bridge simulation and real-world deployment, trusted by the world&apos;s leading autonomous vehicle and robotics companies.
         </p>
       </div>
+    </div>
+
+    <h3 class="subtitle sponsor-tier-title">Gold</h3>
+    <div class="sponsor-tiles sponsor-tiles--gold">
       <div class="sponsor-tile">
         <a href="https://www.qualcomm.com/" target="_blank" rel="noopener noreferrer" aria-label="Qualcomm (opens in new tab)">
           <img class="sponsor-logo-img" src="https://logodownload.org/wp-content/uploads/2017/04/qualcomm-logo-3.png" width="280" height="100" alt="Qualcomm">
         </a>
         <p class="sponsor-tile-text">
           Qualcomm is a leading technology company whose Snapdragon Ride platform combines high-performance automotive chips, AI-driven perception, and advanced driver-assistance software to enable scalable ADAS and automated driving capabilities for automakers worldwide. Its Snapdragon Ride Pilot system, co-developed with partners like BMW and integrated with real-world data, supports hands-free highway and urban driving scenarios while helping vehicle makers accelerate safety-focused automated driving solutions.
+        </p>
+      </div>
+
+      <div class="sponsor-tile">
+        <a href="#" aria-label="XPerformanceRobotics">
+          <img class="sponsor-logo-img" src="https://xperformancerobotics.com/assets/images/logo.webp" width="280" height="100" alt="HiWiTronics">
+        </a>
+        <p class="sponsor-tile-text">
+          XPerformanceRobotics
+        </p>
+      </div>
+
+      <div class="sponsor-tile">
+        <a href="#" aria-label="HiWiTronics">
+          <img class="sponsor-logo-img" src="static/logos/hiwitronics.png" width="280" height="100" alt="HiWiTronics">
+        </a>
+        <p class="sponsor-tile-text">
+          HiWiTronics is a cutting-edge technology start-up specializing in advanced electronic components, drones, demining solutions, ICT and autonomous technologies. Our mission is to develop innovative, high-performance solutions that enhance industrial applications and defense operations in an evolving global landscape.
         </p>
       </div>
     </div>
