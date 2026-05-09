@@ -1,6 +1,1116 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <<<<<<< HEAD
+    <meta charset="utf-8">
+    <meta name="keywords" content="DriveX, V2X, Cooperative Autonomous Driving, Foundation Models, CVPR 2026, Workshop">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>DriveX 2026 – Foundation Models for Autonomous Driving</title>
+
+    <link rel="icon" href="./static/images/favicon.svg">
+    <link rel="stylesheet" href="./static/css/bulma.min.css">
+    <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+    <link rel="stylesheet" href="./static/css/index.css">
+    <link rel="stylesheet" href=".css/style.css?v=3">
+
+    <script src="js/modernizr.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script defer src="./static/js/fontawesome.all.min.js"></script>
+
+    <style>
+        :root {
+            --drivex-bg: #020817;
+            --drivex-bg-soft: #050b1f;
+            --drivex-primary: #2dd4bf;
+            --drivex-primary-soft: rgba(45, 212, 191, 0.12);
+            --drivex-accent: #38bdf8;
+            --drivex-text-main: #e5e7eb;
+            --drivex-text-soft: #9ca3af;
+            --drivex-radius-xl: 18px;
+            --drivex-radius-full: 999px;
+            --drivex-shadow-soft: 0 18px 40px rgba(15, 23, 42, 0.45);
+            --drivex-border-subtle: 1px solid rgba(148, 163, 253, 0.18);
+            --drivex-card-bg: radial-gradient(circle at top left, rgba(56, 189, 248, 0.06), transparent),
+            radial-gradient(circle at top right, rgba(45, 212, 191, 0.04), transparent),
+            #020817;
+        }
+
+        html, body {
+            scroll-behavior: smooth;
+            background-color: var(--drivex-bg);
+            color: var(--drivex-text-main);
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text", -system-ui, sans-serif;
+        }
+
+        body {
+            padding-top: 4.25rem;
+        }
+
+        a {
+            color: var(--drivex-accent);
+            transition: color 0.2s ease, opacity 0.2s ease;
+        }
+
+        a:hover {
+            color: var(--drivex-primary);
+            opacity: 0.92;
+        }
+
+        .navbar {
+            background: radial-gradient(circle at top, rgba(45, 212, 191, 0.06), transparent) var(--drivex-bg);
+            border-bottom: 1px solid rgba(148, 163, 253, 0.12);
+            backdrop-filter: blur(14px);
+        }
+
+        .navbar-item,
+        .navbar-link {
+            color: var(--drivex-text-soft);
+            font-size: 0.9rem;
+            letter-spacing: 0.02em;
+        }
+
+        .navbar-item.is-active,
+        .navbar-item:hover,
+        .navbar-link:hover {
+            color: var(--drivex-primary);
+            background: transparent;
+        }
+
+        .navbar-brand .navbar-item strong {
+            color: #f9fafb;
+            font-weight: 650;
+            letter-spacing: 0.08em;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+        }
+
+        .navbar-brand span.tagline {
+            display: inline-flex;
+            align-items: center;
+            margin-left: 0.6rem;
+            padding: 0.18rem 0.7rem;
+            border-radius: var(--drivex-radius-full);
+            font-size: 0.65rem;
+            color: var(--drivex-primary);
+            border: 1px solid rgba(45, 212, 191, 0.45);
+            background: rgba(15, 23, 42, 0.95);
+            gap: 0.25rem;
+        }
+
+        .hero.drivex-hero {
+            position: relative;
+            min-height: 70vh;
+            display: flex;
+            align-items: center;
+            color: #f9fafb;
+            overflow: hidden;
+
+
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.25)),
+            url("https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Denver_skyline.jpg/1920px-Denver_skyline.jpg") center/cover no-repeat;
+            background-attachment: fixed;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 0% 0%, rgba(15, 23, 42, 0.1), transparent),
+            radial-gradient(circle at 100% 0%, rgba(15, 23, 42, 0.24), transparent),
+            linear-gradient(to bottom, rgba(2, 6, 23, 0.5), rgba(2, 6, 23, 0.98));
+            mix-blend-mode: normal;
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-kicker {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.35rem 0.9rem;
+            border-radius: var(--drivex-radius-full);
+            border: 1px solid rgba(148, 163, 253, 0.32);
+            background: rgba(2, 6, 23, 0.9);
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.14em;
+            color: var(--drivex-text-soft);
+            gap: 0.55rem;
+            margin-bottom: 0.9rem;
+        }
+
+        .hero-kicker span.dot {
+            width: 7px;
+            height: 7px;
+            border-radius: 999px;
+            background: var(--drivex-primary);
+            box-shadow: 0 0 12px rgba(45, 212, 191, 0.95);
+        }
+
+        .hero-title {
+            font-size: clamp(2.3rem, 4vw, 3.2rem);
+            font-weight: 700;
+            letter-spacing: 0.02em;
+            margin-bottom: 0.35rem;
+        }
+
+        .hero-subtitle {
+            font-size: 1.1rem;
+            color: var(--drivex-text-soft);
+            max-width: 40rem;
+            margin-bottom: 1.3rem;
+        }
+
+        .hero-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.2rem;
+            font-size: 0.78rem;
+            color: var(--drivex-text-soft);
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-meta span {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .hero-ctas {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            align-items: center;
+        }
+
+        .btn-pill {
+            border-radius: var(--drivex-radius-full);
+            padding-inline: 1.4rem;
+            font-size: 0.8rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            border-width: 1px;
+            border-style: solid;
+            transition: all 0.2s ease;
+            box-shadow: 0 14px 30px rgba(15, 23, 42, 0.35);
+        }
+
+        .btn-primary {
+            background: linear-gradient(to right, var(--drivex-primary), var(--drivex-accent));
+            border-color: transparent;
+            color: #020817;
+            font-weight: 640;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 20px 40px rgba(15, 23, 42, 0.5);
+            opacity: 0.97;
+        }
+
+        .btn-ghost {
+            background: rgba(2, 6, 23, 0.96);
+            border-color: rgba(148, 163, 253, 0.38);
+            color: var(--drivex-text-main);
+        }
+
+        .btn-ghost:hover {
+            border-color: var(--drivex-primary);
+            color: var(--drivex-primary);
+            transform: translateY(-1px);
+        }
+
+        .hero-badge-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.7rem;
+            margin-top: 1.1rem;
+            font-size: 0.7rem;
+            color: var(--drivex-text-soft);
+        }
+
+        .hero-badge {
+            padding: 0.3rem 0.7rem;
+            border-radius: var(--drivex-radius-full);
+            border: 1px solid rgba(75, 85, 99, 0.8);
+            background: rgba(9, 9, 11, 0.96);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .section {
+            padding: 3.2rem 1.5rem;
+        }
+
+        .section:nth-of-type(odd) {
+            background: radial-gradient(circle at top, rgba(15, 23, 42, 0.8), transparent) var(--drivex-bg);
+        }
+
+        .section:nth-of-type(even) {
+            background: var(--drivex-bg-soft);
+        }
+
+        .section .title {
+            color: #f9fafb;
+            font-weight: 640;
+            letter-spacing: 0.02em;
+            margin-bottom: 0.9rem;
+        }
+
+        .section .subtitle {
+            color: var(--drivex-text-soft);
+        }
+
+        .content {
+            color: var(--drivex-text-main);
+            font-size: 0.92rem;
+        }
+
+        .content p,
+        .content li {
+            color: var(--drivex-text-soft);
+            line-height: 1.7;
+        }
+
+        .content ul {
+            margin-top: 0.3rem;
+        }
+
+        .sticky-anchor-nav {
+            padding: 0.75rem 0;
+            background: linear-gradient(to right, rgba(15, 23, 42, 0.98), rgba(2, 6, 23, 0.98));
+            border-bottom: 1px solid rgba(75, 85, 99, 0.5);
+            backdrop-filter: blur(16px);
+            position: sticky;
+            top: 3.4rem;
+            z-index: 30;
+        }
+
+        .anchor-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.55rem;
+        }
+
+        .anchor-buttons .button {
+            border-radius: var(--drivex-radius-full);
+            border-color: rgba(75, 85, 99, 0.85);
+            background-color: transparent;
+            color: var(--drivex-text-soft);
+            font-size: 0.72rem;
+            padding-inline: 1rem;
+            height: 2rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            box-shadow: none;
+        }
+
+        .anchor-buttons .button:hover {
+            color: var(--drivex-primary);
+            border-color: var(--drivex-primary);
+            background: rgba(2, 6, 23, 0.98);
+        }
+
+        .anchor-buttons .button.is-active {
+            background: var(--drivex-primary-soft);
+            color: var(--drivex-primary);
+            border-color: var(--drivex-primary);
+        }
+
+        .schedule-table-wrapper {
+            background: var(--drivex-card-bg);
+            border-radius: var(--drivex-radius-xl);
+            padding: 1.5rem;
+            box-shadow: var(--drivex-shadow-soft);
+            border: var(--drivex-border-subtle);
+            overflow-x: auto;
+        }
+
+        .schedule-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.8rem;
+        }
+
+        .schedule-table tr:nth-child(even) {
+            background-color: rgba(15, 23, 42, 0.9);
+        }
+
+        .schedule-table tr:nth-child(odd) {
+            background-color: rgba(9, 9, 11, 0.96);
+        }
+
+        .schedule-table th,
+        .schedule-table td {
+            padding: 0.5rem 0.75rem;
+            border-bottom: 1px solid rgba(31, 41, 55, 0.9);
+            white-space: nowrap;
+            vertical-align: middle;
+        }
+
+        .schedule-table th {
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            font-size: 0.65rem;
+            color: var(--drivex-text-soft);
+            background: transparent;
+            border-bottom: 1px solid rgba(75, 85, 99, 0.9);
+        }
+
+        .schedule-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            padding: 0.15rem 0.6rem;
+            border-radius: var(--drivex-radius-full);
+            font-size: 0.6rem;
+            border: 1px solid transparent;
+        }
+
+        .schedule-label.keynote {
+            border-color: rgba(45, 212, 191, 0.5);
+            color: var(--drivex-primary);
+            background: rgba(15, 23, 42, 0.96);
+        }
+
+        .schedule-label.panel {
+            border-color: rgba(129, 140, 248, 0.55);
+            color: #818cf8;
+            background: rgba(15, 23, 42, 0.96);
+        }
+
+        .schedule-label.poster {
+            border-color: rgba(251, 191, 36, 0.4);
+            color: #fbbf24;
+            background: rgba(24, 24, 27, 0.98);
+        }
+
+        .schedule-label.oral {
+            border-color: rgba(56, 189, 248, 0.5);
+            color: var(--drivex-accent);
+            background: rgba(9, 9, 11, 0.98);
+        }
+
+        .schedule-label.demo {
+            border-color: rgba(167, 139, 250, 0.55);
+            color: #c4b5fd;
+            background: rgba(15, 23, 42, 0.96);
+        }
+
+        a.schedule-oral-paper-link {
+            display: block;
+            margin-top: 0.4rem;
+            max-width: 52rem;
+            font-size: 0.78rem;
+            font-weight: 500;
+            color: #e5e7eb;
+            line-height: 1.5;
+            text-decoration: none;
+            transition: color 0.15s ease, border-color 0.15s ease;
+        }
+
+        a.schedule-oral-paper-link:hover {
+            color: var(--drivex-accent);
+        }
+
+        a.schedule-oral-paper-link:focus-visible {
+            outline: 2px solid var(--drivex-accent);
+            outline-offset: 2px;
+            border-radius: 4px;
+        }
+
+        a.schedule-oral-paper-link--placeholder {
+            border-bottom: 1px dashed rgba(148, 163, 253, 0.4);
+            cursor: help;
+        }
+
+        a.schedule-oral-paper-link--placeholder:hover {
+            color: #cbd5e1;
+        }
+
+        .schedule-label.social {
+            border-color: rgba(236, 72, 153, 0.5);
+            color: #fb7185;
+            background: rgba(9, 9, 11, 0.98);
+        }
+
+        .schedule-table td:first-child {
+            white-space: nowrap;
+        }
+
+        .schedule-table td:last-child {
+            white-space: normal;
+        }
+
+        .schedule-session-card {
+            display: flex;
+            flex-direction: column;
+            gap: 0.55rem;
+            padding: 0.9rem 1rem;
+            border-radius: 16px;
+            border: 1px solid rgba(148, 163, 253, 0.14);
+            background: rgba(15, 23, 42, 0.72);
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.02);
+        }
+
+        a.schedule-speaker-header-link {
+            display: block;
+            text-decoration: none;
+            color: inherit;
+            border-radius: 12px;
+            margin: -4px -6px 0;
+            padding: 4px 6px 0;
+            transition: background 0.18s ease;
+        }
+
+        a.schedule-speaker-header-link:hover {
+            background: rgba(45, 212, 191, 0.08);
+        }
+
+        a.schedule-speaker-header-link:focus-visible {
+            outline: 2px solid var(--drivex-primary);
+            outline-offset: 2px;
+        }
+
+        a.schedule-speaker-header-link .schedule-session-logo {
+            pointer-events: none;
+        }
+
+        a.schedule-opening-keynote-link {
+            text-decoration: none;
+            color: inherit;
+            border-radius: 8px;
+            transition: color 0.18s ease, background 0.18s ease;
+        }
+
+        a.schedule-opening-keynote-link:hover {
+            color: var(--drivex-primary);
+            background: rgba(45, 212, 191, 0.06);
+        }
+
+        a.schedule-opening-keynote-link:focus-visible {
+            outline: 2px solid var(--drivex-primary);
+            outline-offset: 2px;
+        }
+
+        .schedule-session-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 0.9rem;
+        }
+
+        .schedule-session-profile {
+            display: flex;
+            align-items: center;
+            gap: 0.85rem;
+            min-width: 0;
+        }
+
+        .schedule-session-avatar {
+            width: 58px;
+            height: 58px;
+            border-radius: 50%;
+            object-fit: cover;
+            flex-shrink: 0;
+            border: 2px solid rgba(148, 163, 253, 0.32);
+            box-shadow: 0 8px 20px rgba(15, 23, 42, 0.55);
+        }
+
+        .schedule-session-text {
+            min-width: 0;
+        }
+
+        .schedule-session-kicker {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 0.2rem;
+        }
+
+        .schedule-session-title {
+            color: #f9fafb;
+            font-size: 0.88rem;
+            font-weight: 620;
+            letter-spacing: 0.01em;
+        }
+
+        .schedule-session-name {
+            margin: 0;
+            color: #f9fafb;
+            font-size: 0.94rem;
+            font-weight: 620;
+        }
+
+        .schedule-session-affiliation {
+            margin: 0.12rem 0 0;
+            color: var(--drivex-text-soft);
+            font-size: 0.74rem;
+            line-height: 1.5;
+        }
+
+        .schedule-session-logo-wrap {
+            flex-shrink: 0;
+            min-width: 112px;
+            height: 64px;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .schedule-session-logo {
+            max-width: 100%;
+            max-height: 44px;
+            object-fit: contain;
+        }
+
+        .schedule-detail {
+            border-radius: 14px;
+            border: 1px solid rgba(148, 163, 253, 0.12);
+            background: rgba(2, 6, 23, 0.58);
+            overflow: hidden;
+        }
+
+        .schedule-detail summary {
+            list-style: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 0.75rem;
+            padding: 0.68rem 0.82rem;
+            color: #f3f4f6;
+            font-size: 0.75rem;
+            font-weight: 560;
+        }
+
+        .schedule-detail summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .schedule-detail summary::after {
+            content: "+";
+            color: var(--drivex-primary);
+            font-size: 1rem;
+            line-height: 1;
+        }
+
+        .schedule-detail[open] summary::after {
+            content: "-";
+        }
+
+        .schedule-detail p {
+            margin: 0;
+            padding: 0 0.82rem 0.82rem;
+            color: var(--drivex-text-soft);
+            font-size: 0.74rem;
+            line-height: 1.65;
+        }
+
+        .speaker-card,
+        .organizer-card {
+            background: var(--drivex-card-bg);
+            border-radius: var(--drivex-radius-xl);
+            border: var(--drivex-border-subtle);
+            box-shadow: var(--drivex-shadow-soft);
+            transition: all 0.22s ease;
+        }
+
+        .speaker-card:hover,
+        .organizer-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 24px 60px rgba(15, 23, 42, 0.8);
+            border-color: var(--drivex-primary);
+        }
+
+        .speaker-card img.is-rounded,
+        .organizer-card img.is-rounded {
+            width: 96px;
+            height: 96px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 2px solid rgba(148, 163, 253, 0.4);
+            box-shadow: 0 8px 20px rgba(15, 23, 42, 0.7);
+        }
+
+        .speaker-affiliation,
+        .organizer-affiliation {
+            font-size: 0.72rem;
+            color: var(--drivex-text-soft);
+        }
+
+        .pc-members {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .pc-member {
+            padding: 0.7rem 0.8rem;
+            border-radius: var(--drivex-radius-xl);
+            background: var(--drivex-card-bg);
+            border: var(--drivex-border-subtle);
+            box-shadow: var(--drivex-shadow-soft);
+            font-size: 0.78rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.12rem;
+        }
+
+        .pc-member a {
+            font-weight: 500;
+            color: #e5e7eb;
+            font-size: 0.8rem;
+        }
+
+        .pc-member p {
+            margin: 0;
+            color: var(--drivex-text-soft);
+            font-size: 0.7rem;
+        }
+
+        .awards-list li {
+            padding: 0.18rem 0;
+            font-size: 0.9rem;
+        }
+
+        .timeline-open-box {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.45rem;
+            margin-top: 0.75rem;
+            padding: 0.45rem 0.9rem;
+            border-radius: var(--drivex-radius-full);
+            border: 1px solid rgba(45, 212, 191, 0.45);
+            background: rgba(45, 212, 191, 0.12);
+            color: var(--drivex-primary);
+            font-weight: 600;
+            font-size: 0.82rem;
+        }
+
+        .challenge-title-row {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+            margin-bottom: 0.75rem;
+        }
+
+        .challenge-title-row .title {
+            margin-bottom: 0;
+        }
+
+        .challenge-title-row .timeline-open-box {
+            margin-top: 0;
+        }
+
+        .navbar-end .navbar-item[href="#challenge"] {
+            color: #ccfbf1;
+            border: 1px solid rgba(45, 212, 191, 0.42);
+            border-radius: var(--drivex-radius-full);
+            font-weight: 700;
+            margin: 0.2rem 0.35rem;
+            padding: 0.38rem 0.8rem;
+            background: rgba(45, 212, 191, 0.12);
+        }
+
+        .navbar-end .navbar-item[href="#challenge"]:hover {
+            color: #f0fdfa;
+            background: rgba(45, 212, 191, 0.24);
+        }
+
+        .anchor-buttons a[href="#challenge"] {
+            background: linear-gradient(to right, var(--drivex-primary), var(--drivex-accent));
+            color: #020817;
+            border-color: transparent;
+            font-weight: 700;
+            box-shadow: 0 10px 24px rgba(15, 23, 42, 0.45);
+        }
+
+        .anchor-buttons a[href="#challenge"]:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 14px 30px rgba(15, 23, 42, 0.5);
+        }
+
+        .challenge-track-buttons {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(215px, 1fr));
+            gap: 0.75rem;
+            margin: 1rem 0 1.15rem;
+        }
+
+        .challenge-track-button {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 0.2rem;
+            padding: 0.75rem 0.9rem;
+            border-radius: var(--drivex-radius-xl);
+            border: 1px solid rgba(45, 212, 191, 0.36);
+            background: radial-gradient(circle at top right, rgba(56, 189, 248, 0.24), transparent 55%),
+            linear-gradient(135deg, rgba(45, 212, 191, 0.16), rgba(15, 23, 42, 0.95));
+            color: #f0fdfa;
+            box-shadow: var(--drivex-shadow-soft);
+            transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+        }
+
+        .challenge-track-button:hover {
+            color: #f0fdfa;
+            border-color: rgba(56, 189, 248, 0.72);
+            transform: translateY(-2px);
+            box-shadow: 0 20px 38px rgba(15, 23, 42, 0.52);
+        }
+
+        .challenge-track-button .track-label {
+            font-size: 0.68rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: rgba(224, 242, 254, 0.78);
+            font-weight: 700;
+        }
+
+        .challenge-track-button .track-name {
+            font-size: 0.96rem;
+            font-weight: 700;
+            line-height: 1.25;
+        }
+
+        .challenge-track-button .track-date {
+            font-size: 0.78rem;
+            color: #99f6e4;
+            font-weight: 600;
+        }
+
+        .challenge-citation {
+            margin-top: 0.7rem;
+            border-radius: 12px;
+            border: 1px solid rgba(148, 163, 253, 0.12);
+            background: rgba(2, 6, 23, 0.58);
+            overflow: hidden;
+        }
+
+        .challenge-citation summary {
+            list-style: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 0.75rem;
+            padding: 0.55rem 0.75rem;
+            font-size: 0.72rem;
+            font-weight: 600;
+            color: var(--drivex-primary);
+        }
+
+        .challenge-citation summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .challenge-citation summary::after {
+            content: "+";
+            flex-shrink: 0;
+            color: var(--drivex-primary);
+            font-size: 1rem;
+            line-height: 1;
+        }
+
+        .challenge-citation[open] summary::after {
+            content: "-";
+        }
+
+        .challenge-citation pre {
+            margin: 0;
+            padding: 0 0.75rem 0.75rem;
+            font-size: 0.64rem;
+            line-height: 1.45;
+            color: var(--drivex-text-soft);
+            white-space: pre-wrap;
+            word-break: break-word;
+            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, monospace;
+        }
+
+        .sponsor-tier-title {
+            margin-top: 1.35rem;
+            margin-bottom: 0.65rem;
+            font-weight: 750;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            color: rgba(226, 232, 240, 0.92);
+        }
+
+        .sponsor-tiles {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 2rem 2.25rem;
+            margin-bottom: 1.25rem;
+            align-items: start;
+        }
+
+        .sponsor-tiles--ultimate {
+            grid-template-columns: 1fr;
+            justify-items: center;
+        }
+
+        .sponsor-tiles--platinum {
+            grid-template-columns: repeat(auto-fit, minmax(280px, 420px));
+            justify-content: center;
+        }
+
+        .sponsor-tiles--gold {
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+
+        .sponsor-tile {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 1rem;
+        }
+
+        .sponsor-tile > a {
+            width: 100%;
+            max-width: 420px;
+            min-height: 140px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.65rem 1rem;
+            border-radius: 16px;
+            transition: background 0.2s ease, transform 0.2s ease;
+        }
+
+        .sponsor-tile > a:hover {
+            background: rgba(45, 212, 191, 0.07);
+            transform: translateY(-2px);
+        }
+
+        .sponsor-tile > a:focus-visible {
+            outline: 2px solid var(--drivex-primary);
+            outline-offset: 3px;
+        }
+
+        .sponsor-logo-img {
+            display: block;
+            height: 100px;
+            width: auto;
+            max-width: 280px;
+            object-fit: contain;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .sponsor-logo-img--motional {
+            height: 140px;
+            max-width: 360px;
+        }
+
+        .sponsor-logo-img--nomadic {
+            height: 120px;
+            width: 120px;
+            max-width: none;
+        }
+
+        .sponsor-logo-fallback {
+            min-height: 100px;
+            min-width: min(280px, 100%);
+            padding: 0.75rem 1rem;
+            border-radius: 16px;
+            border: 1px solid rgba(148, 163, 184, 0.25);
+            background: rgba(15, 23, 42, 0.55);
+            color: rgba(248, 250, 252, 0.92);
+            font-weight: 750;
+            letter-spacing: 0.02em;
+            display: grid;
+            place-items: center;
+            text-align: center;
+        }
+
+        .sponsor-tile-text {
+            margin: 0;
+            max-width: 26rem;
+            font-size: 0.78rem;
+            line-height: 1.65;
+            color: var(--drivex-text-soft);
+            text-align: center;
+        }
+
+        .accepted-papers-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            margin-top: 1.15rem;
+        }
+
+        .accepted-paper-card {
+            background: var(--drivex-card-bg);
+            border-radius: var(--drivex-radius-xl);
+            border: var(--drivex-border-subtle);
+            box-shadow: var(--drivex-shadow-soft);
+            padding: 1rem 1.15rem;
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) auto;
+            grid-template-rows: auto auto;
+            column-gap: 1.25rem;
+            row-gap: 0.4rem;
+            align-items: start;
+        }
+
+        .accepted-paper-title {
+            margin: 0;
+            grid-column: 1;
+            grid-row: 1;
+            color: #f9fafb;
+            font-weight: 650;
+            font-size: 0.95rem;
+            line-height: 1.38;
+        }
+
+        .accepted-paper-meta {
+            margin: 0;
+            grid-column: 1;
+            grid-row: 2;
+            font-size: 0.76rem;
+            color: var(--drivex-text-soft);
+            line-height: 1.55;
+        }
+
+        .accepted-paper-actions {
+            grid-column: 2;
+            grid-row: 1 / span 2;
+            align-self: center;
+            justify-self: end;
+            margin-top: 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            align-items: center;
+        }
+
+        @media screen and (max-width: 640px) {
+            .accepted-paper-card {
+                grid-template-columns: 1fr;
+                grid-template-rows: auto auto auto;
+            }
+
+            .accepted-paper-title {
+                grid-column: 1;
+                grid-row: 1;
+            }
+
+            .accepted-paper-meta {
+                grid-column: 1;
+                grid-row: 2;
+            }
+
+            .accepted-paper-actions {
+                grid-column: 1;
+                grid-row: 3;
+                justify-self: start;
+                align-self: start;
+            }
+        }
+
+        .accepted-paper-pdf {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.45rem;
+            padding: 0.4rem 0.85rem;
+            border-radius: var(--drivex-radius-full);
+            border: 1px solid rgba(56, 189, 248, 0.4);
+            background: rgba(2, 6, 23, 0.65);
+            color: #e5e7eb;
+            font-size: 0.72rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: transform 0.18s ease, border-color 0.18s ease, color 0.18s ease;
+        }
+
+        .accepted-paper-pdf:hover {
+            transform: translateY(-1px);
+            border-color: rgba(45, 212, 191, 0.6);
+            color: var(--drivex-primary);
+        }
+
+        .accepted-paper-note {
+            margin-top: 0.8rem;
+            font-size: 0.78rem;
+            color: var(--drivex-text-soft);
+        }
+
+        @media screen and (max-width: 900px) {
+            .sponsor-tiles {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+        }
+
+        .footer-hero {
+            background-color: #020817;
+            border-top: 1px solid rgba(75, 85, 99, 0.7);
+        }
+
+        .footer-hero img {
+            border-radius: var(--drivex-radius-xl);
+            box-shadow: var(--drivex-shadow-soft);
+            border: 1px solid rgba(148, 163, 253, 0.2);
+            object-fit: cover;
+        }
+
+        .footer-text {
+            margin-top: 0.75rem;
+            font-size: 0.7rem;
+            color: var(--drivex-text-soft);
+        }
+
+        @media screen and (max-width: 1024px) {
+            body {
+                padding-top: 3.6rem;
+            }
+
+            .hero.drivex-hero {
+                min-height: 68vh;
+                background-attachment: scroll;
+            }
+
+            .hero-title {
+                font-size: 2.1rem;
+            }
+
+            .hero-subtitle {
+                font-size: 0.98rem;
+            }
+
+            .hero-meta {
+                gap: 0.7rem;
+            }
+
+            .anchor-buttons .button {
+                font-size: 0.68rem;
+            }
+
+            .schedule-session-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .schedule-session-logo-wrap {
+                min-width: 96px;
+                height: 56px;
+            }
+        }
+    </style>
+    =======
     <meta charset="utf-8">
     <meta name="keywords" content="DriveX, V2X, Cooperative Autonomous Driving, Foundation Models, CVPR 2026, Workshop">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -1114,6 +2224,7 @@
             }
         }
     </style>
+    >>>>>>> origin/main
 </head>
 
 <body>
@@ -1180,6 +2291,10 @@
                 <span>
           <i class="fa fa-map-marker-alt"></i>
           Denver, Colorado, USA
+        </span>
+                <span>
+          <i class="fa fa-map-marker-alt"></i>
+          Colorado Convention Center, Room: 207
         </span>
                 <span>
           <i class="fa fa-university"></i>
@@ -1296,11 +2411,11 @@
                 </thead>
                 <tbody>
                 <tr>
-                    <td>08:00 – 08:10</td>
+                    <td>08:00 – 08:05</td>
                     <td>Opening Remarks – Welcome &amp; Workshop Overview</td>
                 </tr>
                 <tr>
-                    <td>08:10 – 08:30</td>
+                    <td>08:05 – 08:20</td>
                     <td>
                         <div class="schedule-session-card">
                             <a class="schedule-speaker-header-link" href="https://walzimmer.github.io/website/"
@@ -1358,7 +2473,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td>08:30 – 08:50</td>
+                    <td>08:20 – 08:40</td>
                     <td>
                         <div class="schedule-session-card">
                             <a class="schedule-speaker-header-link" href="https://motional.com/balajee-kannan"
@@ -1373,7 +2488,7 @@
                                                 <span class="schedule-session-title">Keynote 1</span>
                                                 <span class="schedule-label keynote"><i class="fa fa-microphone"></i>Keynote</span>
                                             </div>
-                                            <p class="schedule-session-name">Balajee Kannan</p>
+                                            <p class="schedule-session-name">Dr. Balajee Kannan</p>
                                             <p class="schedule-session-affiliation">Motional, USA</p>
                                         </div>
                                     </div>
@@ -1395,7 +2510,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td>08:50 – 09:10</td>
+                    <td>08:40 – 09:00</td>
                     <td>
                         <div class="schedule-session-card">
                             <a class="schedule-speaker-header-link" href="https://mobility-lab.seas.ucla.edu/about/"
@@ -1427,13 +2542,21 @@
                             </details>
                             <details class="schedule-detail">
                                 <summary>Speaker Bio</summary>
-                                <p>Speaker bio will be announced closer to the workshop date.</p>
+                                <p>Dr. Jiaqi Ma is Director of the FHWA/UCLA Center of Excellence on New Mobility and
+                                    Automated Vehicles, Professor at the UCLA Samueli School of Engineering, Director of
+                                    the UCLA Mobility Lab, and Associate Director of the UCLA Institute of
+                                    Transportation Studies. He has led and managed numerous transportation research
+                                    projects funded by the U.S. Department of Transportation, National Science
+                                    Foundation, state Departments of Transportation, and other federal, state, and local
+                                    agencies. His research spans automated driving, mobility digital twins, multimodal
+                                    sensing, cooperative perception and decision-making, robotics, spatial data mining,
+                                    simulation, and reasoning.</p>
                             </details>
                         </div>
                     </td>
                 </tr>
                 <tr>
-                    <td>09:10 – 09:30</td>
+                    <td>09:00 – 09:20</td>
                     <td>
                         <div class="schedule-session-card">
                             <a class="schedule-speaker-header-link"
@@ -1472,50 +2595,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td>09:30 – 09:50</td>
-                    <td>
-                        <div class="schedule-session-card">
-                            <a class="schedule-speaker-header-link" href="https://nomadicai.com/" target="_blank"
-                               rel="noopener noreferrer">
-                                <div class="schedule-session-header">
-                                    <div class="schedule-session-profile">
-                                        <img class="schedule-session-avatar"
-                                             src="https://scholar.googleusercontent.com/citations?view_op=medium_photo&user=LUPy_-IAAAAJ&citpid=4"
-                                             alt="Mustafa Bal">
-                                        <div class="schedule-session-text">
-                                            <div class="schedule-session-kicker">
-                                                <span class="schedule-session-title">Keynote 4</span>
-                                                <span class="schedule-label keynote"><i class="fa fa-microphone"></i>Keynote</span>
-                                            </div>
-                                            <p class="schedule-session-name">Mustafa Bal</p>
-                                            <p class="schedule-session-affiliation">Nomadic AI, USA</p>
-                                        </div>
-                                    </div>
-                                    <div class="schedule-session-logo-wrap">
-                                        <img class="schedule-session-logo" src="static/img/nomadic_logo_light.svg"
-                                             alt="Nomadic AI logo">
-                                    </div>
-                                </div>
-                            </a>
-                            <details class="schedule-detail">
-                                <summary>Abstract</summary>
-                                <p>Abstract will be announced closer to the workshop date.</p>
-                            </details>
-                            <details class="schedule-detail">
-                                <summary>Speaker Bio</summary>
-                                <p>Speaker bio will be announced closer to the workshop date.</p>
-                            </details>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>09:30 – 10:00</td>
-                    <td>Poster Session I &amp; Coffee Break <span class="schedule-label poster"><i
-                            class="fa fa-image"></i>Posters</span> <span class="schedule-label coffee"><i
-                            class="fa fa-coffee"></i>Coffee Break</span></td>
-                </tr>
-                <tr>
-                    <td>10:00 – 10:20</td>
+                    <td>09:20 – 09:40</td>
                     <td>
                         <div class="schedule-session-card">
                             <a class="schedule-speaker-header-link" href="https://jamie.shotton.org/" target="_blank"
@@ -1552,7 +2632,56 @@
                     </td>
                 </tr>
                 <tr>
-                    <td>10:20 – 10:40</td>
+                    <td>09:40 – 10:00</td>
+                    <td>
+                        <div class="schedule-session-card">
+                            <a class="schedule-speaker-header-link" href="https://nomadicai.com/" target="_blank"
+                               rel="noopener noreferrer">
+                                <div class="schedule-session-header">
+                                    <div class="schedule-session-profile">
+                                        <img class="schedule-session-avatar"
+                                             src="https://scholar.googleusercontent.com/citations?view_op=medium_photo&user=LUPy_-IAAAAJ&citpid=4"
+                                             alt="Mustafa Bal">
+                                        <div class="schedule-session-text">
+                                            <div class="schedule-session-kicker">
+                                                <span class="schedule-session-title">Keynote 4</span>
+                                                <span class="schedule-label keynote"><i class="fa fa-microphone"></i>Keynote</span>
+                                            </div>
+                                            <p class="schedule-session-name">Mustafa Bal</p>
+                                            <p class="schedule-session-affiliation">Nomadic AI, USA</p>
+                                        </div>
+                                    </div>
+                                    <div class="schedule-session-logo-wrap">
+                                        <img class="schedule-session-logo" src="static/img/nomadic_logo_light.svg"
+                                             alt="Nomadic AI logo">
+                                    </div>
+                                </div>
+                            </a>
+                            <details class="schedule-detail">
+                                <summary>Abstract</summary>
+                                <p>Abstract will be announced closer to the workshop date.</p>
+                            </details>
+                            <details class="schedule-detail">
+                                <summary>Speaker Bio</summary>
+                                <p>Speaker bio will be announced closer to the workshop date.</p>
+                            </details>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>10:00 – 10:50</td>
+                    <td>Poster Session I (ExHall A) &amp; Coffee Break
+                        <span class="schedule-label poster"><i class="fa fa-image"></i>Posters</span>
+                        <span class="schedule-label coffee"><i class="fa fa-coffee"></i>Coffee Break</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>10:00 – 10:30</td>
+                    <td><strong>Nomadic AI — Live Demo</strong>
+                        <span class="schedule-label demo"><i class="fa fa-desktop"></i>Demo</span>
+                </tr>
+                <tr>
+                    <td>10:50 – 11:10</td>
                     <td>
                         <div class="schedule-session-card">
                             <a class="schedule-speaker-header-link" href="https://profiles.stanford.edu/marco-pavone"
@@ -1591,7 +2720,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td>10:40 – 11:00</td>
+                    <td>11:10 – 11:30</td>
                     <td>
                         <!-- Phil Duan: replace #speakers below with speaker website URL when available -->
                         <div class="schedule-session-card">
@@ -1630,17 +2759,11 @@
                     </td>
                 </tr>
                 <tr>
-                    <td>11:00 – 11:30</td>
+                    <td>11:30 – 12:00</td>
                     <td>Panel Discussion I: Industry Track <span class="schedule-label panel"><i
                             class="fa fa-comments"></i>Panel</span></td>
                 </tr>
-                <tr>
-                    <td>11:30 – 12:00</td>
-                    <td><strong>Nomadic AI — live demo</strong> (main stage, shared screen with keynotes). Poster
-                        Session II &amp; Coffee Break <span class="schedule-label demo"><i class="fa fa-desktop"></i>Demo</span>
-                        <span class="schedule-label poster"><i class="fa fa-image"></i>Posters</span> <span
-                                class="schedule-label coffee"><i class="fa fa-coffee"></i>Coffee Break</span></td>
-                </tr>
+
                 <tr>
                     <td>12:00 – 13:00</td>
                     <td>Lunch Break &amp; Networking</td>
@@ -1761,13 +2884,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td>14:00 – 14:30</td>
-                    <td>Poster Session III &amp; Coffee Break <span class="schedule-label poster"><i
-                            class="fa fa-image"></i>Posters</span> <span class="schedule-label coffee"><i
-                            class="fa fa-coffee"></i>Coffee Break</span></td>
-                </tr>
-                <tr>
-                    <td>14:30 – 14:50</td>
+                    <td>14:00 – 14:20</td>
                     <td>
                         <div class="schedule-session-card">
                             <a class="schedule-speaker-header-link"
@@ -1805,7 +2922,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td>14:50 – 15:10</td>
+                    <td>14:20 – 14:40</td>
                     <td>
                         <div class="schedule-session-card">
                             <a class="schedule-speaker-header-link" href="https://cvg.cit.tum.de/members/cremers"
@@ -1844,7 +2961,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td>15:10 – 15:30</td>
+                    <td>14:40 – 15:00</td>
                     <td>
                         <div class="schedule-session-card">
                             <a class="schedule-speaker-header-link"
@@ -1884,66 +3001,308 @@
                     </td>
                 </tr>
                 <tr>
-                    <td>15:30 – 16:00</td>
+                    <td>15:00 – 16:00</td>
+                    <td>Poster Session II &amp; Coffee Break
+                        <span class="schedule-label poster"><i class="fa fa-image"></i>Posters</span>
+                        <span class="schedule-label coffee"><i class="fa fa-coffee"></i>Coffee Break</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>16:00 – 16:30</td>
                     <td>Panel Discussion II: Academic Track <span class="schedule-label panel"><i
                             class="fa fa-comments"></i>Panel</span></td>
                 </tr>
                 <tr>
-                    <td>16:00 – 16:30</td>
-                    <td>Poster Session IV &amp; Coffee Break <span class="schedule-label poster"><i
-                            class="fa fa-image"></i>Posters</span></td>
-                </tr>
-                <tr>
                     <td>16:30 – 16:40</td>
                     <td>
-                        Oral Presentation 1 <span class="schedule-label oral"><i
-                            class="fa fa-chalkboard"></i>Oral</span>
-                        <!-- Oral 1: replace href below with paper link; then remove class schedule-oral-paper-link--placeholder -->
-                        <a class="schedule-oral-paper-link schedule-oral-paper-link--placeholder" href=""
-                           target="_blank" rel="noopener noreferrer" title="Add paper URL in index.html">Calibration-Free
-                            View-Agnostic Monocular 3D Object Detection for Urban Scenes</a>
+                        <div class="schedule-session-card">
+                            <a class="schedule-speaker-header-link"
+                               href="https://drivex-workshop.github.io/cvpr2026/static/pdf/13_Calibration_Free_View_Agnos.pdf"
+                               target="_blank"
+                               rel="noopener noreferrer">
+                                <div class="schedule-session-header">
+                                    <div class="schedule-session-profile">
+                                        <img class="schedule-session-avatar"
+                                             src="https://scholar.googleusercontent.com/citations?view_op=medium_photo&user=306TgWoAAAAJ&citpid=4"
+                                             alt="">
+                                        <div class="schedule-session-text">
+                                            <div class="schedule-session-kicker">
+                                                <span class="schedule-session-title">Oral Paper Presentation 1: Calibration-Free View-Agnostic Monocular 3D Object Detection for Urban Scenes</span>
+                                                <span class="schedule-label oral"><i
+                                                        class="fa fa-chalkboard"></i>Oral</span>
+                                            </div>
+                                            <p class="schedule-session-name">Dr. Mehmet Kerem Turkcan</p>
+                                            <p class="schedule-session-affiliation">Columbia University, USA </p>
+                                        </div>
+                                    </div>
+                                    <div class="schedule-session-logo-wrap">
+                                        <img class="schedule-session-logo"
+                                             src="https://miro.medium.com/0*3qIWoFnZgVUtsXB-.png"
+                                             alt="Logo">
+                                    </div>
+                                </div>
+                            </a>
+                            <details class="schedule-detail">
+                                <summary>Abstract</summary>
+                                <p>Cooperative vehicle-to-everything (V2X) perception requires 3D object detection
+                                    across heterogeneous cameras whose intrinsic parameters may be unavailable,
+                                    imprecise, or drifting. We present UrbanOmniDetect, a calibration-free monocular 3D
+                                    object detection framework that predicts ordered 2D projections of 3D bounding box
+                                    vertices from a single RGB image. By formulating 3D detection as keypoint regression
+                                    within a backbone-agnostic single-stage architecture, a single model generalizes
+                                    across ego-vehicle, infrastructure, and aerial viewpoints without camera intrinsics
+                                    or scene priors. We construct the UrbanOmniView dataset by unifying KITTI, DAIR-V2X,
+                                    and high-fidelity Unreal Engine 5 synthetic data (4K, ray-traced) spanning
+                                    ground-level, traffic-surveillance, and drone perspectives. A homography-based
+                                    bird's-eye-view head maps predicted ground-contact keypoints to a top-down plane,
+                                    enforcing geometric consistency without camera parameters. We experiment with YOLO11
+                                    backbone variants at multiple scales and augmented feature pyramid levels. On the
+                                    KITTI benchmark, our best model achieves AP_3D = 30.71 (Moderate) and AP_BEV = 35.19
+                                    at IoU >= 0.7, outperforming calibration-dependent baselines on the Moderate and
+                                    Hard splits, with an mAP_50:95 of 0.751 and 10 ms inference on an A100 GPU.
+                                    Calibration-dependent baselines degrade catastrophically under small intrinsic
+                                    perturbations, whereas our formulation is invariant by construction. UrbanOmniDetect
+                                    provides a deployment-ready framework for autonomous driving, drone surveillance,
+                                    and V2X cooperative perception.</p>
+                            </details>
+                            <details class="schedule-detail">
+                                <summary>Speaker Bio</summary>
+                                <p>Speaker bio will be announced closer to the workshop date.</p>
+                            </details>
+                        </div>
                     </td>
                 </tr>
                 <tr>
                     <td>16:40 – 16:50</td>
                     <td>
-                        Oral Presentation 2 <span class="schedule-label oral"><i
-                            class="fa fa-chalkboard"></i>Oral</span>
-                        <a class="schedule-oral-paper-link schedule-oral-paper-link--placeholder" href=""
-                           target="_blank" rel="noopener noreferrer" title="Add paper URL in index.html">4-D Radar Meets
-                            LiDAR and Camera: Cooperative Perception under Adverse Weather</a>
+                        <div class="schedule-session-card">
+                            <a class="schedule-speaker-header-link"
+                               href="https://drivex-workshop.github.io/cvpr2026/static/pdf/26_4D_Radar_Meets_LiDAR_and_Ca.pdf"
+                               target="_blank"
+                               rel="noopener noreferrer">
+                                <div class="schedule-session-header">
+                                    <div class="schedule-session-profile">
+                                        <img class="schedule-session-avatar"
+                                             src="https://avatars.githubusercontent.com/u/15940617?v=4"
+                                             alt="">
+                                        <div class="schedule-session-text">
+                                            <div class="schedule-session-kicker">
+                                                <span class="schedule-session-title">Oral Paper Presentation 2: 4-D Radar Meets LiDAR and Camera: Cooperative Perception under Adverse Weather</span>
+                                                <span class="schedule-label oral"><i
+                                                        class="fa fa-chalkboard"></i>Oral</span>
+                                            </div>
+                                            <p class="schedule-session-name">Melih Yazgan</p>
+                                            <p class="schedule-session-affiliation">Columbia University, USA </p>
+                                        </div>
+                                    </div>
+                                    <div class="schedule-session-logo-wrap">
+                                        <img class="schedule-session-logo"
+                                             src="https://upload.wikimedia.org/wikipedia/en/4/44/Fzi_logo.svg"
+                                             alt="Logo">
+                                    </div>
+                                </div>
+                            </a>
+                            <details class="schedule-detail">
+                                <summary>Abstract</summary>
+                                <p>Cooperative perception is critical for autonomous driving but remains highly fragile
+                                    when cameras and LiDAR degrade in adverse weather. We address this critical
+                                    limitation by elevating 4D imaging radar to a first-class modality within
+                                    collaborative frameworks and introducing the first Doppler-guided spatial attention
+                                    mechanism for multi-agent fusion. Our approach extends two representative backbones:
+                                    (i) radar substitutes LiDAR to form a radar-camera pipeline, and (ii) radar
+                                    complements LiDAR to form a LiDAR-radar pipeline. A Doppler-derived mask dynamically
+                                    emphasizes moving objects while preserving static context, significantly enhancing
+                                    robustness in cluttered and low-visibility scenes. To support comprehensive
+                                    evaluation, we release radar-augmented benchmarks (OPV2V-R and Adver-City-R)
+                                    featuring physics-based LiDAR degradation. Experiments demonstrate that substituting
+                                    LiDAR with radar nearly doubles baseline detection accuracy in fog, while our
+                                    Doppler-guided attention provides the essential refinement needed to achieve high
+                                    precision. Furthermore, our LiDAR-radar fusion equipped with this attention
+                                    mechanism achieves state-of-the-art robustness under heavy rain and fog. Additional
+                                    validation on the real-world TruckScenes dataset confirms that our Doppler-guided
+                                    radar modules transfer effectively beyond simulation, firmly establishing 4D radar
+                                    as a primary modality for all-weather collaborative perception.</p>
+                            </details>
+                            <details class="schedule-detail">
+                                <summary>Speaker Bio</summary>
+                                <p>Speaker bio will be announced closer to the workshop date.</p>
+                            </details>
+                        </div>
                     </td>
                 </tr>
                 <tr>
                     <td>16:50 – 17:00</td>
                     <td>
-                        Oral Presentation 3 <span class="schedule-label oral"><i
-                            class="fa fa-chalkboard"></i>Oral</span>
-                        <a class="schedule-oral-paper-link schedule-oral-paper-link--placeholder" href=""
-                           target="_blank" rel="noopener noreferrer" title="Add paper URL in index.html">Rethinking
-                            Intermediate Module Utilization in V2X End-to-End Autonomous Driving</a>
+                        <div class="schedule-session-card">
+                            <a class="schedule-speaker-header-link"
+                               href="https://drivex-workshop.github.io/cvpr2026/static/pdf/2_Rethinking_Intermediate_Modu.pdf"
+                               target="_blank"
+                               rel="noopener noreferrer">
+                                <div class="schedule-session-header">
+                                    <div class="schedule-session-profile">
+                                        <img class="schedule-session-avatar"
+                                             src="static/images/man.png"
+                                             alt="">
+                                        <div class="schedule-session-text">
+                                            <div class="schedule-session-kicker">
+                                                <span class="schedule-session-title">Oral Paper Presentation 3: Rethinking Intermediate Module Utilization in V2X End-to-End Autonomous Driving</span>
+                                                <span class="schedule-label oral"><i
+                                                        class="fa fa-chalkboard"></i>Oral</span>
+                                            </div>
+                                            <p class="schedule-session-name">Yiming Kan</p>
+                                            <p class="schedule-session-affiliation">Technical University of Munich
+                                                (TUM), Germany </p>
+                                        </div>
+                                    </div>
+                                    <div class="schedule-session-logo-wrap">
+                                        <img class="schedule-session-logo"
+                                             src="https://upload.wikimedia.org/wikipedia/commons/c/c8/Logo_of_the_Technical_University_of_Munich.svg"
+                                             alt="Logo">
+                                    </div>
+                                </div>
+                            </a>
+                            <details class="schedule-detail">
+                                <summary>Abstract</summary>
+                                <p>End-to-end autonomous driving has progressed rapidly, with vehicle-side models
+                                    relying on perception or ego status. UniV2X has extended this paradigm to the
+                                    Vehicle-to-Everything (V2X) domain, where the broader perceptual scope of V2X offers
+                                    a more revealing context for revisiting the effective utilization of intermediate
+                                    modules. Prior work has examined the utility of intermediate modules in vehicle-side
+                                    models, with studies suggesting that historical trajectories or current ego status
+                                    alone may suffice for achieving competitive performance on open-loop datasets. Our
+                                    paper aims to revisit this assumption in the V2X setting. Using the UniV2X model as
+                                    the baseline and the V2X-Seq dataset as the testbed, we examine the contribution of
+                                    intermediate modules to the final planning output and explore the extent to which
+                                    their utility is fully realized. Our study reveals that current end-to-end models
+                                    tend to underutilize the guidance provided by intermediate modules to the planning
+                                    stage, reflecting a lack of planning-oriented design. To address this issue, we
+                                    propose Optimized Multi-Experts Guided Autonomous Driving (OMEGA), a functional
+                                    integration mechanism that explicitly improves the contribution of intermediate
+                                    modules to the planning process. Experimental results demonstrate that our approach
+                                    significantly enhances the functional contribution of each intermediate component.
+                                    Our findings suggest that performance limitations are not due to the lack of new
+                                    modules but stem from the underutilization of existing ones, urging a
+                                    reconsideration of current end-to-end design practices.</p>
+                            </details>
+                            <details class="schedule-detail">
+                                <summary>Speaker Bio</summary>
+                                <p>Speaker bio will be announced closer to the workshop date.</p>
+                            </details>
+                        </div>
                     </td>
                 </tr>
                 <tr>
                     <td>17:00 – 17:10</td>
                     <td>
-                        Oral Presentation 4 <span class="schedule-label oral"><i
-                            class="fa fa-chalkboard"></i>Oral</span>
-                        <a class="schedule-oral-paper-link schedule-oral-paper-link--placeholder" href=""
-                           target="_blank" rel="noopener noreferrer" title="Add paper URL in index.html">DinoRADE: Full
-                            Spectral Radar-Camera Fusion with Vision Foundation Model Features for Multi-class Object
-                            Detection in Adverse Weather</a>
+                        <div class="schedule-session-card">
+                            <a class="schedule-speaker-header-link"
+                               href="https://drivex-workshop.github.io/cvpr2026/static/pdf/CVPRW_DinoRADE_checked_cameraready.pdf"
+                               target="_blank"
+                               rel="noopener noreferrer">
+                                <div class="schedule-session-header">
+                                    <div class="schedule-session-profile">
+                                        <img class="schedule-session-avatar"
+                                             src="static/images/christof_leitgeb.jpeg"
+                                             alt="">
+                                        <div class="schedule-session-text">
+                                            <div class="schedule-session-kicker">
+                                                <span class="schedule-session-title">Oral Paper Presentation 4: DinoRADE: Full Spectral Radar-Camera Fusion with Vision Foundation Model Features for Multi-class Object Detection in Adverse Weather</span>
+                                                <span class="schedule-label oral"><i
+                                                        class="fa fa-chalkboard"></i>Oral</span>
+                                            </div>
+                                            <p class="schedule-session-name">Christof Leitgeb</p>
+                                            <p class="schedule-session-affiliation">Graz Uni. of Technology,
+                                                Austria </p>
+                                        </div>
+                                    </div>
+                                    <div class="schedule-session-logo-wrap">
+                                        <img class="schedule-session-logo"
+                                             src="https://www.openaire.eu/templates/yootheme/cache/39/tugraz-395c7850.png"
+                                             alt="Logo">
+                                    </div>
+                                </div>
+                            </a>
+                            <details class="schedule-detail">
+                                <summary>Abstract</summary>
+                                <p>Reliable and weather-robust perception systems are essential for save autonomous
+                                    driving and typically employ multi-modal sensor configurations to achieve
+                                    comprehensive environmental awareness. While recent automotive FMCW Radar-based
+                                    approaches achieved remarkable performance on detection tasks in adverse weather
+                                    conditions, they exhibited limitations in resolving fine-grained spatial details
+                                    particularly critical for detecting smaller and vulnerable road users (VRUs).
+                                    Furthermore, existing research has not adequately addressed VRU detection in adverse
+                                    weather datasets such as K-Radar. We present DinoRADE, a Radar-centered detection
+                                    pipeline that processes dense Radar tensors and aggregates vision features around
+                                    transformed reference points in the camera perspective via deformable
+                                    cross-attention. Vision features are provided by a Dinov3 Vision Foundation Model.
+                                    We present a comprehensive performance evaluation on the K-Radar dataset in all
+                                    weather conditions and are among the first to report detection performance
+                                    individually for five object classes. Additionally, we compare our method with
+                                    existing single-class detection approaches and outperform recent Radar-camera
+                                    approaches by 12.1%. Code and trained models will be made publicly available.</p>
+                            </details>
+                            <details class="schedule-detail">
+                                <summary>Speaker Bio</summary>
+                                <p>Speaker bio will be announced closer to the workshop date.</p>
+                            </details>
+                        </div>
                     </td>
                 </tr>
                 <tr>
                     <td>17:10 – 17:20</td>
                     <td>
-                        Oral Presentation 5 <span class="schedule-label oral"><i
-                            class="fa fa-chalkboard"></i>Oral</span>
-                        <a class="schedule-oral-paper-link schedule-oral-paper-link--placeholder" href=""
-                           target="_blank" rel="noopener noreferrer" title="Add paper URL in index.html">GaussianDet3D:
-                            Bridging Gaussian Splatting and Sparse LiDAR Detection for Multi-View 3D Object
-                            Detection</a>
+                        <div class="schedule-session-card">
+                            <a class="schedule-speaker-header-link"
+                               href="https://drivex-workshop.github.io/cvpr2026/static/pdf/30_GaussianDet3D_Bridging_Gaus.pdf"
+                               target="_blank"
+                               rel="noopener noreferrer">
+                                <div class="schedule-session-header">
+                                    <div class="schedule-session-profile">
+                                        <img class="schedule-session-avatar"
+                                             src="https://malaztamim.com/assets/images/my_picture.jpg"
+                                             alt="">
+                                        <div class="schedule-session-text">
+                                            <div class="schedule-session-kicker">
+                                                <span class="schedule-session-title">Oral Paper Presentation 5: GaussianDet3D: Bridging Gaussian Splatting and Sparse LiDAR Detection for Multi-View 3D Object Detection</span>
+                                                <span class="schedule-label oral"><i
+                                                        class="fa fa-chalkboard"></i>Oral</span>
+                                            </div>
+                                            <p class="schedule-session-name">Malaz Tamim</p>
+                                            <p class="schedule-session-affiliation">Technical University of Munich
+                                                (TUM), Germany </p>
+                                        </div>
+                                    </div>
+                                    <div class="schedule-session-logo-wrap">
+                                        <img class="schedule-session-logo"
+                                             src="https://upload.wikimedia.org/wikipedia/commons/c/c8/Logo_of_the_Technical_University_of_Munich.svg"
+                                             alt="Logo">
+                                    </div>
+                                </div>
+                            </a>
+                            <details class="schedule-detail">
+                                <summary>Abstract</summary>
+                                <p>Reliable and weather-robust perception systems are essential for save autonomous
+                                    driving and typically employ multi-modal sensor configurations to achieve
+                                    comprehensive environmental awareness. While recent automotive FMCW Radar-based
+                                    approaches achieved remarkable performance on detection tasks in adverse weather
+                                    conditions, they exhibited limitations in resolving fine-grained spatial details
+                                    particularly critical for detecting smaller and vulnerable road users (VRUs).
+                                    Furthermore, existing research has not adequately addressed VRU detection in adverse
+                                    weather datasets such as K-Radar. We present DinoRADE, a Radar-centered detection
+                                    pipeline that processes dense Radar tensors and aggregates vision features around
+                                    transformed reference points in the camera perspective via deformable
+                                    cross-attention. Vision features are provided by a Dinov3 Vision Foundation Model.
+                                    We present a comprehensive performance evaluation on the K-Radar dataset in all
+                                    weather conditions and are among the first to report detection performance
+                                    individually for five object classes. Additionally, we compare our method with
+                                    existing single-class detection approaches and outperform recent Radar-camera
+                                    approaches by 12.1%. Code and trained models will be made publicly available.</p>
+                            </details>
+                            <details class="schedule-detail">
+                                <summary>Speaker Bio</summary>
+                                <p>Speaker bio will be announced closer to the workshop date.</p>
+                            </details>
+                        </div>
                     </td>
                 </tr>
                 <tr>
@@ -1983,7 +3342,7 @@
     <div class="container is-max-desktop content">
         <h2 class="title">Paper Track</h2>
         <p>
-            DriveX 2026 invites high-quality contributions to foundation models, cooperative perception,
+            DriveX 2026 invites high-quality contributions on foundation models, cooperative perception,
             large driving models, and related topics outlined above.
         </p>
         <p>
@@ -2015,7 +3374,7 @@
             <li><b>Submission Deadline</b>: <s>March 1, 2026 (23:59 PST)</s></li>
             <li><b>Notification to Authors</b>: <s>March 17, 2026</s></li>
             <li><b>Camera-Ready Deadline</b>: <s>March 27, 2026</s></li>
-            <li><b>Poster and Slides Deadline<b>: May 30, 2026 23:59 PT</li>
+            <li><b>Poster and Slides Deadline</b>: May 30, 2026 23:59 PT</li>
         </ul>
 
         <h3 class="subtitle">📗 Non-Archival Track</h3>
@@ -3008,90 +4367,92 @@
                     networks such as Uber and Lyft.
                 </p>
             </div>
+            <h3 class="subtitle sponsor-tier-title">Platinum</h3>
+            <div class="sponsor-tiles sponsor-tiles--platinum">
+                <div class="sponsor-tile">
+                    <a href="https://www.nvidia.com/" target="_blank" rel="noopener noreferrer"
+                       aria-label="NVIDIA (opens in new tab)">
+                        <img class="sponsor-logo-img"
+                             src="https://drivex-workshop.github.io/eccv2026/static/images/nvidia_logo.png" width="280"
+                             height="100" alt="NVIDIA">
+                    </a>
+                    <p class="sponsor-tile-text">
+                        NVIDIA
+                        delivers the full-stack infrastructure for physical AI, combining accelerated computing,
+                        simulation, world models, and robotics frameworks such as Isaac and Omniverse to train,
+                        evaluate, and deploy autonomous systems at scale across robotics, manufacturing, and autonomous
+                        driving.
+                    </p>
+                </div>
+                <div class="sponsor-tile">
+                    <a href="https://nomadicai.com/" target="_blank" rel="noopener noreferrer"
+                       aria-label="Nomadic AI (opens in new tab)">
+                        <img class="sponsor-logo-img sponsor-logo-img--nomadic" src="static/img/nomadic_logo_light.svg"
+                             width="120" height="120" alt="Nomadic AI">
+                    </a>
+                    <p class="sponsor-tile-text">
+                        Nomadic&apos;s Visual AI automatically discovers rare edge cases, multi-agent interactions, and
+                        safety-critical scenarios from fleet-scale video and V2X sensor streams. The platform provides
+                        the high-signal training data and evaluation benchmarks that foundation models need to bridge
+                        simulation and real-world deployment, trusted by the world&apos;s leading autonomous vehicle and
+                        robotics companies.
+                    </p>
+                </div>
+
+            </div>
+
+            <h3 class="subtitle sponsor-tier-title">Gold</h3>
+            <div class="sponsor-tiles sponsor-tiles--gold">
+                <div class="sponsor-tile">
+                    <a href="https://www.qualcomm.com/" target="_blank" rel="noopener noreferrer"
+                       aria-label="Qualcomm (opens in new tab)">
+                        <img class="sponsor-logo-img"
+                             src="https://logodownload.org/wp-content/uploads/2017/04/qualcomm-logo-3.png" width="280"
+                             height="100" alt="Qualcomm">
+                    </a>
+                    <p class="sponsor-tile-text">
+                        Qualcomm is a leading technology company whose Snapdragon Ride platform combines
+                        high-performance automotive chips, AI-driven perception, and advanced driver-assistance software
+                        to enable scalable ADAS and automated driving capabilities for automakers worldwide. Its
+                        Snapdragon Ride Pilot system, co-developed with partners like BMW and integrated with real-world
+                        data, supports hands-free highway and urban driving scenarios while helping vehicle makers
+                        accelerate safety-focused automated driving solutions.
+                    </p>
+                </div>
+
+                <div class="sponsor-tile">
+                    <a href="#" aria-label="XPerformanceRobotics">
+                        <img class="sponsor-logo-img" src="https://xperformancerobotics.com/assets/images/logo.webp"
+                             width="280" height="100" alt="HiWiTronics">
+                    </a>
+                    <p class="sponsor-tile-text">
+                        XPerformanceRobotics
+                    </p>
+                </div>
+
+                <div class="sponsor-tile">
+                    <a href="#" aria-label="HiWiTronics">
+                        <img class="sponsor-logo-img" src="static/logos/hiwitronics.png" width="280" height="100"
+                             alt="HiWiTronics">
+                    </a>
+                    <p class="sponsor-tile-text">
+                        HiWiTronics is a cutting-edge technology start-up specializing in advanced electronic
+                        components, drones, demining solutions, ICT and autonomous technologies. Our mission is to
+                        develop innovative, high-performance solutions that enhance industrial applications and defense
+                        operations in an evolving global landscape.
+                    </p>
+                </div>
+            </div>
+            <p style="text-align: center; margin-bottom: 1.5rem;">
+                DriveX 2026 welcomes sponsorship from industry, startups, and institutions interested in foundation
+                models,
+                cooperative perception, simulation, and large-scale autonomous driving systems.
+            </p>
+            <p style="text-align: center;">
+                For sponsorship opportunities, please contact:
+                <a href="mailto:wz@ucla.edu">wz@ucla.edu</a>.
+            </p>
         </div>
-
-        <h3 class="subtitle sponsor-tier-title">Platinum</h3>
-        <div class="sponsor-tiles sponsor-tiles--platinum">
-            <div class="sponsor-tile">
-                <a href="https://nomadicai.com/" target="_blank" rel="noopener noreferrer"
-                   aria-label="Nomadic AI (opens in new tab)">
-                    <img class="sponsor-logo-img sponsor-logo-img--nomadic" src="static/img/nomadic_logo_light.svg"
-                         width="120" height="120" alt="Nomadic AI">
-                </a>
-                <p class="sponsor-tile-text">
-                    Nomadic&apos;s Visual AI automatically discovers rare edge cases, multi-agent interactions, and
-                    safety-critical scenarios from fleet-scale video and V2X sensor streams. The platform provides the
-                    high-signal training data and evaluation benchmarks that foundation models need to bridge simulation
-                    and real-world deployment, trusted by the world&apos;s leading autonomous vehicle and robotics
-                    companies.
-                </p>
-            </div>
-            <div class="sponsor-tile">
-                <a href="https://www.nvidia.com/" target="_blank" rel="noopener noreferrer"
-                   aria-label="NVIDIA (opens in new tab)">
-                    <img class="sponsor-logo-img"
-                         src="https://drivex-workshop.github.io/eccv2026/static/images/nvidia_logo.png" width="280"
-                         height="100" alt="NVIDIA">
-                </a>
-                <p class="sponsor-tile-text">
-                    NVIDIA
-                    delivers the full-stack infrastructure for physical AI, combining accelerated computing, simulation,
-                    world models, and robotics frameworks such as Isaac and Omniverse to train, evaluate, and deploy
-                    autonomous systems at scale across robotics, manufacturing, and autonomous driving.
-                </p>
-            </div>
-        </div>
-
-        <h3 class="subtitle sponsor-tier-title">Gold</h3>
-        <div class="sponsor-tiles sponsor-tiles--gold">
-            <div class="sponsor-tile">
-                <a href="https://www.qualcomm.com/" target="_blank" rel="noopener noreferrer"
-                   aria-label="Qualcomm (opens in new tab)">
-                    <img class="sponsor-logo-img"
-                         src="https://logodownload.org/wp-content/uploads/2017/04/qualcomm-logo-3.png" width="280"
-                         height="100" alt="Qualcomm">
-                </a>
-                <p class="sponsor-tile-text">
-                    Qualcomm is a leading technology company whose Snapdragon Ride platform combines high-performance
-                    automotive chips, AI-driven perception, and advanced driver-assistance software to enable scalable
-                    ADAS and automated driving capabilities for automakers worldwide. Its Snapdragon Ride Pilot system,
-                    co-developed with partners like BMW and integrated with real-world data, supports hands-free highway
-                    and urban driving scenarios while helping vehicle makers accelerate safety-focused automated driving
-                    solutions.
-                </p>
-            </div>
-
-            <div class="sponsor-tile">
-                <a href="#" aria-label="XPerformanceRobotics">
-                    <img class="sponsor-logo-img" src="https://xperformancerobotics.com/assets/images/logo.webp"
-                         width="280" height="100" alt="HiWiTronics">
-                </a>
-                <p class="sponsor-tile-text">
-                    XPerformanceRobotics
-                </p>
-            </div>
-
-            <div class="sponsor-tile">
-                <a href="#" aria-label="HiWiTronics">
-                    <img class="sponsor-logo-img" src="static/logos/hiwitronics.png" width="280" height="100"
-                         alt="HiWiTronics">
-                </a>
-                <p class="sponsor-tile-text">
-                    HiWiTronics is a cutting-edge technology start-up specializing in advanced electronic components,
-                    drones, demining solutions, ICT and autonomous technologies. Our mission is to develop innovative,
-                    high-performance solutions that enhance industrial applications and defense operations in an
-                    evolving global landscape.
-                </p>
-            </div>
-        </div>
-        <p style="text-align: center; margin-bottom: 1.5rem;">
-            DriveX 2026 welcomes sponsorship from industry, startups, and institutions interested in foundation models,
-            cooperative perception, simulation, and large-scale autonomous driving systems.
-        </p>
-        <p style="text-align: center;">
-            For sponsorship opportunities, please contact:
-            <a href="mailto:wz@ucla.edu">wz@ucla.edu</a>.
-        </p>
     </div>
 </section>
 
