@@ -2816,30 +2816,24 @@ w<!doctype html>
                     <details class="schedule-detail">
                       <summary>Abstract</summary>
                       <p>
-                        Reliable and weather-robust perception systems are
-                        essential for save autonomous driving and typically
-                        employ multi-modal sensor configurations to achieve
-                        comprehensive environmental awareness. While recent
-                        automotive FMCW Radar-based approaches achieved
-                        remarkable performance on detection tasks in adverse
-                        weather conditions, they exhibited limitations in
-                        resolving fine-grained spatial details particularly
-                        critical for detecting smaller and vulnerable road users
-                        (VRUs). Furthermore, existing research has not
-                        adequately addressed VRU detection in adverse weather
-                        datasets such as K-Radar. We present DinoRADE, a
-                        Radar-centered detection pipeline that processes dense
-                        Radar tensors and aggregates vision features around
-                        transformed reference points in the camera perspective
-                        via deformable cross-attention. Vision features are
-                        provided by a Dinov3 Vision Foundation Model. We present
-                        a comprehensive performance evaluation on the K-Radar
-                        dataset in all weather conditions and are among the
-                        first to report detection performance individually for
-                        five object classes. Additionally, we compare our method
-                        with existing single-class detection approaches and
-                        outperform recent Radar-camera approaches by 12.1%. Code
-                        and trained models will be made publicly available.
+                        Accurate 3D object detection from cameras alone remains
+a fundamental challenge in autonomous driving, particularly for precise localization and velocity estimation, two
+metrics critical for safe trajectory planning and collision
+avoidance. Existing camera-based methods lift image features into dense Bird’s-Eye View (BEV) grids, which struggle to capture fine-grained geometry and motion cues. We
+present GaussianDet3D, the first method, to the best of
+our knowledge, to apply 3D Gaussian Splatting from multiview images to 3D object detection in the context of autonomous driving, treating predicted Gaussian primitives
+as a pseudo-LiDAR point cloud fed into a sparse LiDAR
+detector. Unlike a LiDAR point, which carries only coordinates and intensity, each Gaussian encodes parameters
+capturing geometry, orientation, opacity, and per-class semantic distributions. By aggregating Gaussian point clouds
+across multiple frames, GaussianDet3D captures temporal
+motion cues that enable precise velocity estimation. On
+the nuScenes benchmark, GaussianDet3D achieves stateof-the-art translation and velocity errors among all camerabased methods, outperforming BEVFormer by 8.1% and
+13.1%, respectively, while remaining competitive in overall
+detection score. These results demonstrate that Gaussian
+Splatting provides a geometrically precise, semantically
+rich representation that bridges the gap between imagebased perception and LiDAR-quality spatial reasoning, particularly for the localization and motion estimation tasks
+most critical to autonomous driving safety. The project page
+is available at https://malaztamim.com/GaussianDet3D.
                       </p>
                     </details>
                     <details class="schedule-detail">
